@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMADSp22_FinalProject">
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".LoginSignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
