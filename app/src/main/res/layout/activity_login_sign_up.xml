@@ -10,19 +10,20 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-
+            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
                 app:contentPaddingBottom="15dp"
                 app:contentPaddingLeft="15dp"
@@ -63,8 +64,10 @@
                         android:layout_marginTop="30dp"
                         android:backgroundTint="#4CAF50"
                         android:text="Register As a New User"
+                        android:onClick="onClickRegister"
                         android:textColor="@color/white"
-                        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+                        app:layout_constraintTop_toBottomOf="@+id/et_password"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -121,7 +124,9 @@
                 android:backgroundTint="#F9A825"
                 android:text="Continue without Login"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_login"
+                android:onClick="onClickNoLogin"
+                />
 
         </LinearLayout>
     </ScrollView>
