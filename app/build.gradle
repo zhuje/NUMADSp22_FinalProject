@@ -29,8 +29,16 @@ android {
 
 dependencies {
 
-    // UI
+    // UI -- profile, circular frame for profile picture
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // UI -- profile, other libraries
+    //noinspection GradleCompatible
+    implementation  'com.android.support:design:26.+'
+    //noinspection GradleCompatible
+    implementation  'com.android.support:support-v4:26.+'
+    //noinspection GradleCompatible
+    implementation  'com.android.support:cardview-v7:26.+'
 
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
