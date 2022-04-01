@@ -23,8 +23,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
     }
 
-    public void onClickRegister(View view){
-        Intent intent = new Intent(this, Register.class);
+    public void onClickRegisterActivity(View view){
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
 

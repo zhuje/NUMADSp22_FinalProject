@@ -13,10 +13,10 @@
             android:name=".TestActivity"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginRegisterActivity"

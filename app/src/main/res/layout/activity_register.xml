@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bamboo"
     android:padding="25dp"
-    tools:context=".Register">
+    tools:context=".RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -94,6 +94,7 @@
 
                     <Button
                         android:id="@+id/btn_login"
+                        android:onClick="onClickRegister"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
