@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMADSp22_FinalProject">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".TestActivity"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:name=".LoginRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
