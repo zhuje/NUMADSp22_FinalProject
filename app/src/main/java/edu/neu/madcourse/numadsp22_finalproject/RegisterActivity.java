@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -25,8 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String EMAIL = "Email";
     public static final String USERNAME = "Username";
     public static final String PASSWORD = "Password";
-
-
+    DatabaseReference databaseReference;
 
 
     @Override
@@ -35,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         try {
             editTextEmail = findViewById(R.id.et_email);
@@ -47,6 +48,14 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    public void getToast(String toastMessage) {
+        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
+    }
+
+    public void onClickGoToLoginActivity(View view){
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
 
     /**
      * Helper function to onClickRegister.
@@ -58,7 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
     public boolean isInputValid(EditText editText, String dataType){
         String string = editText.getText().toString().trim();
 
-        if (string.equals(EMAIL) && !Patterns.EMAIL_ADDRESS.matcher(string).matches()) {
+        Log.d("Pizza", "Inside isInputValid(), string is : " + string );
+
+        if (dataType.equals(EMAIL)  && !Patterns.EMAIL_ADDRESS.matcher(string).matches()) {
             editText.setError("Please provide a valid email address.");
             editText.requestFocus();
             return false;
@@ -71,72 +82,48 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void getToast(String toastMessage) {
-        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
-    }
 
-    public void onClickGoToLoginActivity(View view){
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-        finish();
-    }
 
     public void onClickRegister(View view){
+        // validate data input
         boolean emailValid = isInputValid(editTextEmail, EMAIL);
         boolean usernameValid = isInputValid(editTextUsername, USERNAME);
         boolean passwordValid = isInputValid(editTextPassword, PASSWORD);
-
         if (!emailValid || !usernameValid || !passwordValid) {
             return;
         }
 
+        // if data valid proceed to authentication
         String email = editTextEmail.getText().toString().trim();
         String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-
-//        mAuth.createUserWithEmailAndPassword(email,password)
-//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        // if User Authentication is successful
-//                        if (task.isSuccessful()){
-//                            User user = new User(username, password,email);
-//
-//                            FirebaseDatabase.getInstance().getReference("Users")
-//                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-//                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    if (task.isSuccessful()){
-//                                        getToast("User successfully registered!");
-//                                    } else {
-//                                        getToast("Fail to register. Try again.");
-//                                    }
-//                                }
-//                            });
-//                        } else {
-//                            getToast("Failed to Register User. Try Again. ");
-//                        }
-//                    }
-//                });
-
+            // authenticate user
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                // Add user to real time database
-                                Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                                // add user to realtime database
+                                User newUser = new User(username,password,email);
+                                databaseReference.child("Users").child(username).setValue(newUser)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()){
+                                            // Proceed to next activity after sign-in
+                                            Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                                        } else {
+                                            Toast.makeText(RegisterActivity.this, "Error!! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
                             } else {
-                                Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
-
-
-
-
     }
 
 
