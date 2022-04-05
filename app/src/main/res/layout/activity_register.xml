@@ -81,7 +81,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_login" />
 
                     <EditText
-                        android:id="@+id/et_password"
+                        android:id="@+id/et_login_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -101,7 +101,7 @@
                         android:backgroundTint="#4CAF50"
                         android:text="Register"
                         android:textColor="@color/white"
-                        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+                        app:layout_constraintTop_toBottomOf="@+id/et_login_password" />
 
                     <TextView
                         android:onClick="onClickGoToLoginActivity"

@@ -15,7 +15,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
     public static final String PASSWORD = "Password";
     DatabaseReference databaseReference;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,21 +38,12 @@ public class RegisterActivity extends AppCompatActivity {
         try {
             editTextEmail = findViewById(R.id.et_email);
             editTextUsername = findViewById(R.id.et_username);
-            editTextPassword = findViewById(R.id.et_password);
+            editTextPassword = findViewById(R.id.et_login_password);
         } catch (Error error){
             Log.d("RegisterActivity", "Error while finding view for edit texts :" + error);
         } catch (Exception exception) {
             Log.d("RegisterActivity", "Exception thrown while finding view for edit texts :" + exception);
         }
-    }
-
-    public void getToast(String toastMessage) {
-        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
-    }
-
-    public void onClickGoToLoginActivity(View view){
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-        finish();
     }
 
     /**
@@ -83,7 +72,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * onClickRegister -- when the register button is clicked, this function
+     * is called. Data input in each editText is checked before the User is
+     * authenticated and added to the realtime database.
+     * @param view current view for Register Activity
+     */
     public void onClickRegister(View view){
         // validate data input
         boolean emailValid = isInputValid(editTextEmail, EMAIL);
@@ -126,6 +120,23 @@ public class RegisterActivity extends AppCompatActivity {
                     });
     }
 
+
+    /**
+     * Helper method to consolidate Toasts
+     * @param toastMessage a string to display in the Toast
+     */
+    public void getToast(String toastMessage) {
+        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * onClickGoToLoginActivity -- navigates back to the LoginActivity
+     * @param view current View
+     */
+    public void onClickGoToLoginActivity(View view){
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
 
 
 }
