@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     public static final String PASSWORD = "Password";
     FirebaseAuth fAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,37 +31,17 @@ public class LoginActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.et_login_email);
         editTextPassword = findViewById(R.id.et_login_password);
         fAuth = FirebaseAuth.getInstance();
-
     }
+
 
     /**
-     * Helper function to onClickRegister.
-     * Checks if each editText is NOT empty.
-     * This is required to register a user.
-     * @param editText the editText on the Register UI
-     * @param dataType the dataType being entered (e.g. username, password, email)
+     * onClickLogin -- uses firebase authentication sign users in with
+     * a email and password.
+     * @param view
      */
-    public boolean isInputValid(EditText editText, String dataType){
-        String string = editText.getText().toString().trim();
-
-        Log.d("Pizza", "Inside isInputValid(), string is : " + string );
-
-        if (dataType.equals(EMAIL)  && !Patterns.EMAIL_ADDRESS.matcher(string).matches()) {
-            editText.setError("Please provide a valid email address.");
-            editText.requestFocus();
-            return false;
-        } else if (string.isEmpty()){
-            editText.setError(dataType + " is required!");
-            editText.requestFocus();
-            return false;
-        } else {
-            return true;
-        }
-    }
-
     public void onClickLogin(View view){
-        boolean emailValid = isInputValid(editTextEmail, EMAIL);
-        boolean passwordValid = isInputValid(editTextPassword, PASSWORD);
+        boolean emailValid = Util.isInputValid(editTextEmail, EMAIL);
+        boolean passwordValid = Util.isInputValid(editTextPassword, PASSWORD);
         if (!emailValid || !passwordValid) {
             return;
         }
@@ -83,9 +62,13 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 
+
+    /**
+     * onClickGoToRegisterActivity -- navigates to Register Activity
+     * @param view current view
+     */
     public void onClickGoToRegisterActivity(View view){
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
