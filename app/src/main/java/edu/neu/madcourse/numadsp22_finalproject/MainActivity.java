@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClick(View view){
-        Intent intent = new Intent(this, LoginRegisterActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 

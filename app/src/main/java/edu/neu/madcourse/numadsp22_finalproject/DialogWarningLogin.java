@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
 
-public class NoLoginDialog {
+/**
+ * Continue without Login Feature -- user will only have limited
+ * access to application.
+ */
+public class DialogWarningLogin {
     Activity activity;
     AlertDialog dialog;
 
-    NoLoginDialog(Activity a) {
+    DialogWarningLogin(Activity a) {
         activity = a;
     }
 

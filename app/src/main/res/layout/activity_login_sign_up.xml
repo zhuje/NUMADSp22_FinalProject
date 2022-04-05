@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bamboo"
     android:padding="25dp"
-    tools:context=".LoginRegisterActivity">
+    tools:context=".LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:ems="10"
-                        android:hint="Username"
+                        android:hint="Email"
                         android:inputType="text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
                         android:backgroundTint="#4CAF50"
                         android:text="Login"
                         android:textColor="@color/white"
@@ -116,17 +117,17 @@
 
             </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btn_demo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#F9A825"
-                android:text="Continue without Login"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/btn_login"
-                android:onClick="onClickNoLogin"
-                />
+<!--            <Button-->
+<!--                android:id="@+id/btn_demo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:backgroundTint="#F9A825"-->
+<!--                android:text="Continue without Login"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btn_login"-->
+<!--                android:onClick="onClickNoLogin"-->
+<!--                />-->
 
         </LinearLayout>
     </ScrollView>

@@ -103,21 +103,32 @@
                         android:textColor="@color/white"
                         app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
+                    <TextView
+                        android:onClick="onClickGoToLoginActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:padding="15dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Already Registered? Login Here "
+                        />
+
 
                 </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btn_demo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="#F9A825"
-                android:text="Continue without Login"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_demo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:backgroundTint="#F9A825"-->
+<!--                android:text="Continue without Login"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btn_login" />-->
 
         </LinearLayout>
     </ScrollView>
