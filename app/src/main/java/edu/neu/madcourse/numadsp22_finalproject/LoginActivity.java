@@ -1,20 +1,16 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,9 +33,10 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * onClickLogin -- uses firebase authentication sign users in with
      * a email and password.
-     * @param view
+     *
+     * @param view current view
      */
-    public void onClickLogin(View view){
+    public void onClickLogin(View view) {
         boolean emailValid = Util.isInputValid(editTextEmail, EMAIL);
         boolean passwordValid = Util.isInputValid(editTextPassword, PASSWORD);
         if (!emailValid || !passwordValid) {
@@ -50,16 +47,13 @@ public class LoginActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
 
         fAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Logged in Successfully.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), TestActivity.class));
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(LoginActivity.this, "Logged in Successfully.", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Error!" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
 
-                        }
                     }
                 });
     }
@@ -67,16 +61,13 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * onClickGoToRegisterActivity -- navigates to Register Activity
+     *
      * @param view current view
      */
-    public void onClickGoToRegisterActivity(View view){
+    public void onClickGoToRegisterActivity(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-
-
-
-
 
 
 }
