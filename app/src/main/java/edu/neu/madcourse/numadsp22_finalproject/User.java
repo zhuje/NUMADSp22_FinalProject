@@ -7,9 +7,8 @@ public class User {
 
     public User(){}
 
-    public User(String uuid, String username){
+    public User(String uuid){
         this.uuid = uuid;
-        this.username = username;
         this.rank = 0;
     }
 

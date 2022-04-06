@@ -27,7 +27,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="150dp"
@@ -151,6 +151,16 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorDark"
                         android:text="Update" />
+
+
+                    <Button
+                        android:id="@+id/btn_profile_logout"
+                        android:layout_marginTop="15dp"
+                        android:onClick="onClickLogOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/red"
+                        android:text="LOGOUT" />
 
                 </LinearLayout>
 

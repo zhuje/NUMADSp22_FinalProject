@@ -84,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     .addOnCompleteListener(task12 -> Log.d("PRUNE", "User profile updated."));
 
                             // add user to realtime database
-                            User newUser = new User(authUserProfile.getUid(), username);
+                            User newUser = new User(authUserProfile.getUid());
                             databaseReference.child("Users").child(authUserProfile.getUid()).setValue(newUser)
                                     .addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
