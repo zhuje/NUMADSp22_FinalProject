@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 public class Util {
     public static final String EMAIL = "Email";
+    public static final String USERNAME = "Username";
+    public static final String PASSWORD = "Password";
 
     /**
      * Helper function to onClickRegister.

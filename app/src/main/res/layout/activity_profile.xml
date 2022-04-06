@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="60dp"
-                            android:text="Jane Doe"
+                            android:text="Display Name"
                             android:textSize="25dp"
                             android:textStyle="bold" />
 
@@ -81,6 +81,7 @@
                                 android:text="Rank : "
                                 android:textSize="17sp" />
                             <TextView
+                                android:id="@+id/tv_profile_rank"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimary"
@@ -118,13 +119,12 @@
                         android:id="@+id/et_profile_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="password"
-                        android:inputType="textPassword" />
+                        android:hint="**********"
+                         />
 
                     <Button
                         android:id="@+id/btn_profile_updatePwd"
-                        android:onClick="updateProfile"
+                        android:onClick="onClickUpdatePassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorDark"
@@ -139,11 +139,14 @@
 
                     <EditText
                         android:id="@+id/et_profile_email"
+                        android:inputType="textEmailAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="jane_doe@gmail.com" />
+                        android:hint="user_email@server.com" />
 
                     <Button
+                        android:id="@+id/btn_profile_updateEmail"
+                        android:onClick="onClickUpdateEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorDark"

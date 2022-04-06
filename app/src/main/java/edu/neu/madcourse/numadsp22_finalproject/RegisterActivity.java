@@ -7,11 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -22,6 +19,7 @@ import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    FirebaseUser authUserProfile;
     private FirebaseAuth mAuth;
     private EditText editTextEmail, editTextUsername, editTextPassword;
     public static final String EMAIL = "Email";
@@ -74,36 +72,32 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
 
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        if (authUserProfile != null ) {
 
-                        Log.d("Cherry", user.getUid());
+                            // Add User Display Name to Auth User Profile
+                            Log.d("Cherry", authUserProfile.getUid());
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(username).build();
+                            authUserProfile.updateProfile(profileUpdates)
+                                    .addOnCompleteListener(task12 -> Log.d("PRUNE", "User profile updated."));
 
-//                        if (user != null ) {
-//                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-//                                    .setDisplayName(username).build();
-//                            user.updateProfile(profileUpdates)
-//                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                        @Override
-//                                        public void onComplete(@NonNull Task<Void> task) {
-//                                            Log.d("PRUNE", "User profile updated.");
-//                                        }
-//                                    });
-//                        }
-
-
-//                        // add user to realtime database
-                        User newUser = new User(user.getUid(), username, password, email);
-                        databaseReference.child("Users").child(user.getUid()).setValue(newUser)
-                                .addOnCompleteListener(task1 -> {
-                                    if (task1.isSuccessful()) {
-                                        // Proceed to next activity after sign-in
-                                        Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(getApplicationContext(), TestActivity.class));
-                                    } else {
-                                        Toast.makeText(RegisterActivity.this, "Error!! " + Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                            // add user to realtime database
+                            User newUser = new User(authUserProfile.getUid(), username);
+                            databaseReference.child("Users").child(authUserProfile.getUid()).setValue(newUser)
+                                    .addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            // Proceed to next activity after sign-in
+                                            Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                                        } else {
+                                            Toast.makeText(RegisterActivity.this, "Error!! " + Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Error! Occurred while trying to add user to database." , Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         Toast.makeText(RegisterActivity.this, "Error! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                     }

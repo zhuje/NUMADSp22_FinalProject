@@ -7,11 +7,9 @@ public class User {
 
     public User(){}
 
-    public User(String uuid, String username, String password, String email){
+    public User(String uuid, String username){
         this.uuid = uuid;
         this.username = username;
-        this.password = password;
-        this.email = email;
         this.rank = 0;
     }
 
