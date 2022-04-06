@@ -2,12 +2,13 @@ package edu.neu.madcourse.numadsp22_finalproject;
 
 public class User {
 
-    public String username, password, email;
+    public String username, password, email, uuid;
     public int rank;
 
     public User(){}
 
-    public User(String username, String password, String email){
+    public User(String uuid, String username, String password, String email){
+        this.uuid = uuid;
         this.username = username;
         this.password = password;
         this.email = email;

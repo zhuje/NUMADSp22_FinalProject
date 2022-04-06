@@ -58,6 +58,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_profile_username"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -96,26 +97,6 @@
                             android:layout_gravity="center_horizontal"
                             />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="20dp"
-                            android:text="About me ..."
-                            android:textAlignment="center"
-                            android:textSize="18sp"
-                            android:textStyle="italic" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Update About Me "
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:padding="15dp"
-                            android:textColor="@color/colorPrimary"/>
-
-
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -125,19 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
-                    <!-- Username -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Username"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:hint="janeDoe"
-                        android:textSize="20dp" />
                     <!-- Password -->
                     <TextView
                         android:layout_width="match_parent"
@@ -146,7 +115,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/editTextTextPassword"
+                        android:id="@+id/et_profile_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -154,6 +123,8 @@
                         android:inputType="textPassword" />
 
                     <Button
+                        android:id="@+id/btn_profile_updatePwd"
+                        android:onClick="updateProfile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorDark"
@@ -167,6 +138,7 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/et_profile_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="jane_doe@gmail.com" />
