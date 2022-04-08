@@ -19,8 +19,8 @@ public class CustomBaseAdapter extends BaseAdapter {
         this.listLesson = lessonList;
         this.lockList = lockList;
         inflater = LayoutInflater.from(ctx);
-
     }
+
     @Override
     public int getCount() {
         return listLesson.length;

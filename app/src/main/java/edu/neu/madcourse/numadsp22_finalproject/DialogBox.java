@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
 
-public class NoLoginDialog {
+public class DialogBox {
     Activity activity;
     AlertDialog dialog;
 
-    NoLoginDialog(Activity a) {
+    DialogBox(Activity a) {
         activity = a;
     }
 
@@ -16,10 +16,10 @@ public class NoLoginDialog {
      * startLoadingDialog() -- displays a loading screen.
      * Can be dismissed if you click outside the dialog box.
      */
-    public void startLoadingDialog(){
+    public void startLoadingDialog(String message){
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity);
         // LayoutInflater inflater = activity.getLayoutInflater();
-        alertBuilder.setMessage("You will have limited access without logging in.");
+        alertBuilder.setMessage(message);
         //alertBuilder.setView(inflater.inflate(R.layout.custom_dialog,null));
         alertBuilder.setCancelable(true);
         dialog = alertBuilder.create();

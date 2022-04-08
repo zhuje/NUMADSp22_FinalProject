@@ -9,7 +9,7 @@ import android.view.View;
 
 public class LoginRegisterActivity extends AppCompatActivity {
 
-    NoLoginDialog noLoginDialog;
+    DialogBox dialogBox;
 
 
     @Override
@@ -17,7 +17,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_sign_up);
 
-        noLoginDialog = new NoLoginDialog(this);
+        dialogBox = new DialogBox(this);
 
 
 
@@ -31,19 +31,25 @@ public class LoginRegisterActivity extends AppCompatActivity {
     public void onClickNoLogin(View view){
         Intent intent = new Intent(this, TestActivity.class);
 
-        noLoginDialog.startLoadingDialog();
+        dialogBox.startLoadingDialog("You will have limited access without logging in.");
 
         // delay loading screen dismissal
         Handler dialogHandler = new Handler();
         dialogHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                noLoginDialog.dismissDialog();
+                dialogBox.dismissDialog();
             }
         }, 2000);
 
 
 //        startActivity(intent);
+    }
+
+
+    public void onClickGoToLessons(View view){
+        Intent intent = new Intent(this, MainLessonsScreen.class);
+        startActivity(intent);
     }
 
 
