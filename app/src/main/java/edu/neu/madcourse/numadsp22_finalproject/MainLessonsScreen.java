@@ -15,8 +15,6 @@ public class MainLessonsScreen extends AppCompatActivity {
     final int LOCK = R.drawable.redlock2;
     final int UNLOCK = R.drawable.greenlock2;
 
-    DialogBox dialogBox;
-
     String[] lessonList = {"Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5"};
     int[] lockList = {UNLOCK, LOCK, LOCK, LOCK, LOCK};
 
@@ -29,9 +27,6 @@ public class MainLessonsScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_lessons_screen);
-
-        dialogBox = new DialogBox(this);
-
 
         // TODO -- get user rank from db
         // pseduocode | user.child("Users").child(authUserProfile.getUID()) -> data snapshot -> rank
