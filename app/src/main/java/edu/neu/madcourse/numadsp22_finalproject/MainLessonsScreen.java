@@ -54,19 +54,19 @@ public class MainLessonsScreen extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // TODO -- replace TestActivity.class with sublesson activity
                 if(position == 0){;
-                    startActivity(new Intent(MainLessonsScreen.this, TestActivity.class));
+                    startActivity(new Intent(MainLessonsScreen.this, SubLesson1.class));
                 }
                 if(position == 1 && userRank >= 5 ){;
-                    startActivity(new Intent(MainLessonsScreen.this, TestActivity.class));
+                    startActivity(new Intent(MainLessonsScreen.this, SubLesson2.class));
                 }
                 if(position == 2 && userRank >= 10 ){;
-                    startActivity(new Intent(MainLessonsScreen.this, TestActivity.class));
+                    startActivity(new Intent(MainLessonsScreen.this, SubLesson3.class));
                 }
                 if(position == 3 && userRank >= 14 ){;
-                    startActivity(new Intent(MainLessonsScreen.this, TestActivity.class));
+                    startActivity(new Intent(MainLessonsScreen.this, SubLesson4.class));
                 }
                 if(position == 4 && userRank >= 17){;
-                    startActivity(new Intent(MainLessonsScreen.this, TestActivity.class));
+                    startActivity(new Intent(MainLessonsScreen.this, SubLesson5.class));
                 }
             }
         });

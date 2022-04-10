@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/font/nunito_semibold.xml" value="0.2734375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_login_sign_up.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -10,8 +11,14 @@
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.2542955326460481" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson1.xml" value="0.1956521739130435" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson2.xml" value="0.1956521739130435" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson3.xml" value="0.1956521739130435" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson4.xml" value="0.1956521739130435" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson5.xml" value="0.1956521739130435" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.3613210441563727" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.234375" />
+        <entry key="app/src/main/res/layout/sub_lessons_list_item.xml" value="0.1956521739130435" />
       </map>
     </option>
   </component>
