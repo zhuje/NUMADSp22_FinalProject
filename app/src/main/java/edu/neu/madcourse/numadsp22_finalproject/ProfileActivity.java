@@ -15,8 +15,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -24,9 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     FirebaseUser authUserProfile;
     EditText et_pwd, et_email;
-    TextView tv_username;
+    TextView tv_username, tv_profile_rank;
     DatabaseReference databaseReference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +41,42 @@ public class ProfileActivity extends AppCompatActivity {
         et_pwd = findViewById(R.id.et_profile_password);
         et_email = findViewById(R.id.et_profile_email);
         tv_username = findViewById(R.id.tv_profile_username);
+        tv_profile_rank = findViewById(R.id.tv_profile_rank);
+
+        getUserRank();
 
         tv_username.setText(authUserProfile.getDisplayName());
         et_email.setHint(authUserProfile.getEmail());
+
+    }
+
+
+
+    public void getUserRank(){
+        databaseReference.child("Users").child(authUserProfile.getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User user = snapshot.getValue(User.class);
+                        if (user != null) {
+                            String myRank = String.valueOf(user.getRank());
+                            // Log.d("inside getUserRank", myRank + " " + myRank.getClass());
+                            tv_profile_rank.setText(myRank);
+                        } else {
+                            Toast.makeText(ProfileActivity.this, "Couldn't fetch user Rank.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(ProfileActivity.this, "Couldn't fetch user Rank.", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
     }
 
 
     public void onClickUpdatePassword(View view) {
-        //Log.d("CheesyBean", et_pwd.getText().toString().trim());
-
         if (Util.isInputValid(et_pwd, Util.PASSWORD)) {
             authUserProfile.updatePassword(et_pwd.getText().toString().trim())
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -86,10 +115,6 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
-
-
-
-
 
 
 }
