@@ -27,9 +27,9 @@ public class MainLessonsScreen extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                if(position == 0){
-//                    startActivity(new Intent(MainLessonsScreen.this, SubLesson1.class));
-//                }
+                if(position == 0){
+
+                }
 
 //                if(position == 1 && lockList[1] == R.drawable.greenlock2){
 //                    startActivity(new Intent(MainActivity.this, SubLesson2.class));
