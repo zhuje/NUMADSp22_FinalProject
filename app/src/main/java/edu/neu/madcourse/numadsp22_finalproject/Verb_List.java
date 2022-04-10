@@ -63,7 +63,7 @@ public class Verb_List extends AppCompatActivity {
         Verb oyogu = new Verb("泳ぐ", "およぐ", "oyogu",
                 "to swim", oyoguPicture,
                 "https://d1vjc5dkcd3yh2.cloudfront.net/audio/4aa8a737b9559b6c896004452a0e8926.mp3");
-        int shinuPicture = R.drawable.oyogu;
+        int shinuPicture = R.drawable.shinu;
         Verb shinu = new Verb("死ぬ", "しぬ", "shinu",
                 "to die", shinuPicture,
                 "https://d1vjc5dkcd3yh2.cloudfront.net/audio/6d240cf77a8ed880d067a9030c905a2e.mp3");
