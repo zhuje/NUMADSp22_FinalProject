@@ -16,13 +16,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        startActivity(new Intent(MainActivity.this, Verb_List.class));
-    }
+        switch (view.getId()){
+            case R.id.verbButton:
+                startActivity(new Intent(MainActivity.this, Verb_List.class));
+                break;
+            case R.id.btn_demo_login:
+                Intent intent = new Intent(this, LoginRegisterActivity.class);
+                startActivity(intent);
+                break;
+        }
 
-
-    public void onClick(View view){
-        Intent intent = new Intent(this, LoginRegisterActivity.class);
-        startActivity(intent);
     }
 
     public void onClickProfile(View view){
