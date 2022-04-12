@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 public class SubLesson1 extends AppCompatActivity {
@@ -40,7 +43,11 @@ public class SubLesson1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_lesson1);
-
+        // set as nominal value for error checking
+        userRank = -1;
+        authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
+        userUUID = authUserProfile.getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         userRankListener();
         //MainActivity unlockLessons = new MainActivity();
 
@@ -93,11 +100,7 @@ public class SubLesson1 extends AppCompatActivity {
     }
 
     public void userRankListener(){
-        // set as nominal value for error checking
-        userRank = -1;
-        authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
-        userUUID = authUserProfile.getUid();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         // pseduocode | user.child("Users").child(authUserProfile.getUID()) -> data snapshot -> rank
         DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID).child("rank");
         // add listener to check for changes in values?
@@ -116,6 +119,36 @@ public class SubLesson1 extends AppCompatActivity {
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                 toast.show();
+            }
+        });
+    }
+
+    /**
+     * Used to increment the user rank when needed.
+     */
+    public void updateUserRank(){
+        // start off by getting the value
+        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID).child("rank");
+        // now run transaction
+        userRankRef.runTransaction(new Transaction.Handler() {
+            @NonNull
+            @Override
+            public Transaction.Result doTransaction(@NonNull MutableData currentData) {
+                // get value
+                Integer userValue = currentData.getValue(Integer.class);
+                // increment it
+                if (userValue == null) {
+                    return Transaction.abort();
+                } else {
+                    Integer newRank = userValue + 1;
+                    currentData.setValue(newRank);
+                }
+                return Transaction.success(currentData);
+            }
+
+            @Override
+            public void onComplete(@Nullable DatabaseError error, boolean committed, @Nullable DataSnapshot currentData) {
+
             }
         });
     }
