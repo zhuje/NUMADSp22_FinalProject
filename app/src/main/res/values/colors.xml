@@ -11,6 +11,8 @@
     <color name="colorDark"> #248e50 </color>
     <color name="colorAccent"> #bf40ff </color>
     <color name="colorWhite"> #FFFFFF </color>
+    <color name="grey">#98949A</color>
+    <color name="red">#ED0505</color>
 
 
 

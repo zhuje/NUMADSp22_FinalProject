@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".ProfileActivity">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="150dp"
@@ -58,41 +58,45 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_profile_username"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="60dp"
-                            android:text="Jane Doe"
+                            android:text="Display Name"
                             android:textSize="25dp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="10dp"
-                            android:text="Rank"
-                            android:textSize="17sp" />
-
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Rank : "
+                                android:textSize="17sp" />
+                            <TextView
+                                android:id="@+id/tv_profile_rank"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimary"
+                                android:text="0"
+                                android:textSize="17sp" />
+                        </LinearLayout>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="20dp"
-                            android:text="Description in profile "
+                            android:text="Complete more lessons to increase your rank."
+                            android:textColor="@color/grey"
+                            android:textStyle="italic"
                             android:textAlignment="center"
-                            android:textSize="18sp"
-                            android:textStyle="italic" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
-                            android:text="Location"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
+                            />
 
                     </LinearLayout>
 
@@ -103,19 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="vertical">
-                    <!-- Username -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Username"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:hint="janeDoe"
-                        android:textSize="20dp" />
                     <!-- Password -->
                     <TextView
                         android:layout_width="match_parent"
@@ -124,14 +116,15 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/editTextTextPassword"
+                        android:id="@+id/et_profile_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="password"
-                        android:inputType="textPassword" />
+                        android:hint="**********"
+                         />
 
                     <Button
+                        android:id="@+id/btn_profile_updatePwd"
+                        android:onClick="onClickUpdatePassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorDark"
@@ -145,16 +138,29 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/et_profile_email"
+                        android:inputType="textEmailAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="jane_doe@gmail.com" />
+                        android:hint="user_email@server.com" />
 
                     <Button
+                        android:id="@+id/btn_profile_updateEmail"
+                        android:onClick="onClickUpdateEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorDark"
                         android:text="Update" />
 
+
+                    <Button
+                        android:id="@+id/btn_profile_logout"
+                        android:layout_marginTop="15dp"
+                        android:onClick="onClickLogOut"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/red"
+                        android:text="LOGOUT" />
 
                 </LinearLayout>
 

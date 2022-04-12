@@ -6,23 +6,24 @@
     android:layout_height="match_parent"
     android:background="@drawable/bamboo"
     android:padding="25dp"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
 
             <androidx.cardview.widget.CardView
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
                 app:contentPaddingBottom="15dp"
                 app:contentPaddingLeft="15dp"
@@ -46,7 +47,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="15dp"
                         android:elevation="10dp"
-                        android:text="Register with Doushi Learner"
+                        android:text=" Doushi Learner"
                         android:textColor="@color/colorPrimary"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -56,25 +57,32 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.1" />
 
+                    <Button
+                        android:id="@+id/btn_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:backgroundTint="#4CAF50"
+                        android:text="Register As a New User"
+                        android:onClick="onClickGoToRegisterActivity"
+                        android:textColor="@color/white"
+                        app:layout_constraintTop_toBottomOf="@+id/et_login_password"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:text="OR" />
+
                     <EditText
-                        android:id="@+id/et_email"
+                        android:id="@+id/et_login_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:ems="10"
                         android:hint="Email"
-                        android:inputType="text"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_login" />
-
-                    <EditText
-                        android:id="@+id/et_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:ems="10"
-                        android:hint="Username"
                         android:inputType="text"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -94,25 +102,15 @@
 
                     <Button
                         android:id="@+id/btn_login"
-                        android:onClick="onClickRegister"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
                         android:backgroundTint="#4CAF50"
-                        android:text="Register"
+                        android:text="Login"
+                        android:onClick="onClickLogin"
                         android:textColor="@color/white"
                         app:layout_constraintTop_toBottomOf="@+id/et_login_password" />
-
-                    <TextView
-                        android:onClick="onClickGoToLoginActivity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:padding="15dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:text="Already Registered? Login Here "
-                        />
 
 
                 </LinearLayout>
@@ -128,9 +126,12 @@
 <!--                android:backgroundTint="#F9A825"-->
 <!--                android:text="Continue without Login"-->
 <!--                android:textColor="@color/white"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/btn_login" />-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btn_login"-->
+<!--                android:onClick="onClickNoLogin"-->
+<!--                />-->
 
         </LinearLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

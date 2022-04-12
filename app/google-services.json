@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "691892337377",
+    "firebase_url": "https://mobiledev-finalproject-default-rtdb.firebaseio.com",
+    "project_id": "mobiledev-finalproject",
+    "storage_bucket": "mobiledev-finalproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691892337377:android:f1bb2d4ecdc0e2595355a0",
+        "android_client_info": {
+          "package_name": "edu.neu.madcourse.numadsp22_finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691892337377-58jk9a8a8hqceg7ms5818rose9c3inob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoopn1C_djR691vsgz1zCn3t28p-ywPNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691892337377-58jk9a8a8hqceg7ms5818rose9c3inob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

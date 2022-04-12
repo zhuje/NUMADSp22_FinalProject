@@ -15,7 +15,13 @@
             android:name=".Verb_List"
             android:exported="false" />
         <activity
-            android:name=".MainLessonsScreen"
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

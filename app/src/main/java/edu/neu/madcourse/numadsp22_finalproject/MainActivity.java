@@ -9,28 +9,20 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
+
     public void onClick(View view){
-        switch (view.getId()){
-            case R.id.verbButton:
-                startActivity(new Intent(MainActivity.this, Verb_List.class));
-                break;
-            case R.id.btn_demo_login:
-                Intent intent = new Intent(this, LoginRegisterActivity.class);
-                startActivity(intent);
-                break;
-        }
-
-    }
-
-    public void onClickProfile(View view){
-        Intent intent = new Intent(this, Profile.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
+
 
 }
