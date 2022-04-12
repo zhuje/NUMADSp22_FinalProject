@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import edu.neu.madcourse.numadsp22_finalproject.LoginActivity;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -22,8 +23,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent intent = new Intent(SplashScreenActivity.this, LoginRegisterActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         }, SPLASH_TIME_OUT);
