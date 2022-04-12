@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import edu.neu.madcourse.numadsp22_finalproject.LoginRegisterActivity;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
