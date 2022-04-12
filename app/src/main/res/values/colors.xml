@@ -10,10 +10,12 @@
     <color name="colorPrimary"> #5bbc59 </color>
     <color name="colorDark"> #248e50 </color>
     <color name="green3">#024C21</color>
+    <color name="greenCorrect">#5CDC92</color>
     <color name="colorAccent"> #bf40ff </color>
     <color name="colorWhite"> #FFFFFF </color>
     <color name="grey">#98949A</color>
     <color name="red">#ED0505</color>
+    <color name="redInCorrect">#F44336</color>
     <color name="yellow1">#FFEB3B</color>
     <color name="yellow2">#FFC107</color>
     <color name="yellow3">#FFAA00</color>
