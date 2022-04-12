@@ -43,31 +43,7 @@ public class MainLessonsScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_lessons_screen);
         // TODO -- get user rank from db
-        // set as nominal value for error checking
-        userRank = -1;
-        authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
-        userUUID = authUserProfile.getUid();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        // pseduocode | user.child("Users").child(authUserProfile.getUID()) -> data snapshot -> rank
-        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID).child("rank");
-        // add listener to check for changes in values?
-        userRankRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Integer value = dataSnapshot.getValue(Integer.class);
-                if (value != null){
-                    userRank = value;
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Error",
-                        Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
-                toast.show();
-            }
-        });
+        userRankListener();
 
         if (userRank >= 5) {
             lockList[1] = UNLOCK;
@@ -91,21 +67,49 @@ public class MainLessonsScreen extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // TODO -- replace TestActivity.class with sublesson activity
-                if(position == 0){;
+                if(position == 0){
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson1.class));
                 }
-                if(position == 1 && userRank >= 5 ){;
+                if(position == 1 && userRank >= 5 ){
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson2.class));
                 }
-                if(position == 2 && userRank >= 10 ){;
+                if(position == 2 && userRank >= 10 ){
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson3.class));
                 }
-                if(position == 3 && userRank >= 14 ){;
+                if(position == 3 && userRank >= 14 ){
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson4.class));
                 }
-                if(position == 4 && userRank >= 17){;
+                if(position == 4 && userRank >= 17){
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson5.class));
                 }
+            }
+        });
+    }
+
+    public void userRankListener(){
+        // set as nominal value for error checking
+        userRank = -1;
+        authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
+        userUUID = authUserProfile.getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        // pseduocode | user.child("Users").child(authUserProfile.getUID()) -> data snapshot -> rank
+        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID).child("rank");
+        // add listener to check for changes in values?
+        userRankRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Integer value = dataSnapshot.getValue(Integer.class);
+                if (value != null){
+                    userRank = value;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Error",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                toast.show();
             }
         });
     }
