@@ -23,6 +23,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickGoToSublessonQuiz(View view){
+        Intent intent = new Intent(this, SublessonQuiz.class);
+        startActivity(intent);
+    }
+
+    public void onClickGoToProfile2(View view){
+        Intent intent = new Intent(this, SublessonQuiz.class);
+        startActivity(intent);
+    }
+
+
+
 
 
 }
