@@ -1,4 +1,4 @@
-package edu.neu.madcourse.numadsp22_finalproject;
+package edu.neu.madcourse.numadsp22_finalproject.quizzes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,14 +7,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SublessonQuiz extends AppCompatActivity {
+import edu.neu.madcourse.numadsp22_finalproject.R;
+import edu.neu.madcourse.numadsp22_finalproject.TestActivity;
+
+public class Quiz1c extends AppCompatActivity {
 
     // XML
     TextView title;
     Button btnA, btnB, btnC, btnD,btn_nextLesson;
+    ImageView img_character;
     int correctAnswer;
     int id_A = R.id.btn_subquiz_answerA;
     int id_B = R.id.btn_subquiz_answerB;
@@ -30,12 +35,11 @@ public class SublessonQuiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sublesson_quiz);
-
+        setContentView(R.layout.activity_quiz1c);
         // TODO need to save state on rotate (for colored correct/incorrect answers)
 
-
         title = findViewById(R.id.tv_subquiz_title);
+        img_character = findViewById(R.id.img_character);
         btnA = findViewById(R.id.btn_subquiz_answerA);
         btnB = findViewById(R.id.btn_subquiz_answerB);
         btnC = findViewById(R.id.btn_subquiz_answerC);

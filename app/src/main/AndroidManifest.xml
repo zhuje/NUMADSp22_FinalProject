@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMADSp22_FinalProject">
         <activity
+            android:name=".TestSublesson"
+            android:exported="false" />
+        <activity
+            android:name=".quizzes.Quiz1c"
+            android:exported="false" />
+        <activity
+            android:name=".quizzes.Quiz1b"
+            android:exported="false" />
+        <activity
             android:name=".SublessonQuiz"
             android:exported="false" />
         <activity
