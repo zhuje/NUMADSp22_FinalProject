@@ -28,6 +28,7 @@ public class SubLesson1 extends AppCompatActivity {
     private int userRank;
     private String userUUID;
     private DatabaseReference databaseReference;
+    private SubLessonsAdapter adapter;
     final int LOCK = R.drawable.redlock2;
     final int UNLOCK = R.drawable.greenlock2;
     String lessonList[] = {"Lesson 1A", "Lesson 1B", "Lesson 1C", "Lesson 1D", "UNIT QUIZ"};
@@ -61,19 +62,21 @@ public class SubLesson1 extends AppCompatActivity {
 
 
         listView = (ListView) findViewById(R.id.course_list);
-        SubLessonsAdapter subLessonsAdapter = new SubLessonsAdapter(getApplicationContext(), lessonList, lockList, lessonOneNum);
-        listView.setAdapter(subLessonsAdapter);
+        adapter = new SubLessonsAdapter(getApplicationContext(), lessonList, lockList, lessonOneNum);
+        listView.setAdapter(adapter);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
-                    L1UserRank++;
-                    startActivity(new Intent(SubLesson1.this, TestActivity.class));
-                    if(L1UserRank == 1){
-                        lockList[1] = UNLOCK;
+                    if (userRank < 1) {
+                        updateUserRank();
                     }
+                    //startActivity(new Intent(SubLesson1.this, TestActivity.class));
+                    //if(L1UserRank == 1){
+                    //    lockList[1] = UNLOCK;
+                    //}
                     //start Lesson 1A
                     //unlockLessons.userRank = 1;
                     //lockList[1] = UNLOCK;
@@ -81,19 +84,37 @@ public class SubLesson1 extends AppCompatActivity {
 //                    startActivity(new Intent(SubLesson1.this, MainActivity.class));
 //                    unlockLesson2.lockList[1] = UNLOCK;
                 }
-//                if(position == 1 && unlockLessons.userRank == 1){
+                if (position == 1 && userRank >= 1){
+                    if (userRank < 2) {
+                        updateUserRank();
+                    }
 //                    //start Lesson 2A
+
 //                    unlockLessons.userRank = 2;
 //                    lockList[2] = UNLOCK;
-//                }
-//                if(position == 4){
+                }
+                if (position == 2 && userRank >=2) {
+                    if (userRank < 3) {
+                        updateUserRank();
+                    }
 //                    startActivity(new Intent(SubLesson1.this, MainActivity.class));
 //                    MainActivity unlockL2 = new MainActivity();
 //                    unlockL2.lockList = new int[]{R.drawable.greenlock2, R.drawable.greenlock2, R.drawable.redlock2,
 //                            R.drawable.redlock2, R.drawable.redlock2};
 //
 //
-//                }
+                }
+                if (position == 3 && userRank >=3){
+                    if (userRank < 4) {
+                        updateUserRank();
+                    }
+                }
+
+                if (position == 4 && userRank >=4){
+                    if (userRank < 5) {
+                        updateUserRank();
+                    }
+                }
 
             }
         });
@@ -102,14 +123,28 @@ public class SubLesson1 extends AppCompatActivity {
     public void userRankListener(){
 
         // pseduocode | user.child("Users").child(authUserProfile.getUID()) -> data snapshot -> rank
-        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID).child("rank");
+        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID);
         // add listener to check for changes in values?
         userRankRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Integer value = dataSnapshot.getValue(Integer.class);
+                User value = dataSnapshot.getValue(User.class);
                 if (value != null){
-                    userRank = value;
+                    Integer myRank = value.getRank();
+                    userRank = myRank;
+                    if(userRank >= 1){
+                        lockList[1] = UNLOCK;
+                    }
+                    if(userRank >= 2){
+                        lockList[2] = UNLOCK;
+                    }
+                    if(userRank >= 3){
+                        lockList[3] = UNLOCK;
+                    }
+                    if(userRank >= 4){
+                        lockList[4] = UNLOCK;
+                    }
+                    adapter.notifyDataSetChanged();
                 }
             }
 

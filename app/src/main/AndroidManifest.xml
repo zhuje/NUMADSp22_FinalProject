@@ -36,11 +36,28 @@
             android:name=".TestActivity"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".MainLessonsScreen"
             android:exported="false" />
         <activity
-            android:name=".Profile"
-            android:exported="false" />
+            android:name=".SubLesson1"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson2"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson3"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson4"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson5"
+            android:exported="false"
+            />
         <activity
             android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">

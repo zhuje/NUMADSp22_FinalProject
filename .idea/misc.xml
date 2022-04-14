@@ -9,15 +9,11 @@
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_main_lessons_screen.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_sub_lesson1.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_test.xml" value="0.25271739130434784" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_verb_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/sub_lessons_list_item.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/verb_card.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
-        <entry key="app/src/main/res/layout/activity_login_sign_up.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.2542955326460481" />
-        <entry key="app/src/main/res/layout/activity_test.xml" value="0.3613210441563727" />
       </map>
     </option>
   </component>

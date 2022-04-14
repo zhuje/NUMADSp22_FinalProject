@@ -19,4 +19,13 @@
         android:layout_gravity="center_horizontal"
         />
 
+    <Button
+        android:id="@+id/btn_test_lesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:onClick="onClickGoToLesson"
+        android:text="DEMO Lesson" />
+
 </LinearLayout>
