@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.TestActivity;
+import edu.neu.madcourse.numadsp22_finalproject.TestLesson;
 
 public class UnitTest extends AppCompatActivity {
 
@@ -35,7 +36,7 @@ public class UnitTest extends AppCompatActivity {
     Class nextLesson = TestActivity.class;
     private static final String KEY_CORRECT_ANSWER_ID = "KEY_CORRECT_ANSWER_ID";
     int character = R.drawable.taberu;
-    String quiz_id;
+    String unit_test_id;
     int bankListCount = 0;
 
     @Override
@@ -53,14 +54,14 @@ public class UnitTest extends AppCompatActivity {
         btnArray = new Button[]{btnA, btnB, btnC, btnD};
         btn_nextLesson = findViewById(R.id.btn_subquiz_nextlesson);
 
-//        Intent intent = getIntent();
-//        if (intent != null) {
-//            quiz_id = intent.getStringExtra("QUIZ_ID");
-//            Log.d("QUIZ_ID : ", quiz_id);
-//        } else {
-//            Toast.makeText(this, "Error: Couldn't fetch quiz.", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
+        Intent intent = getIntent();
+        if (intent != null) {
+            unit_test_id = intent.getStringExtra("UNIT_TEST_ID");
+            Log.d("UNIT_TEST_ID : ", unit_test_id);
+        } else {
+            Toast.makeText(this, "Error: Couldn't fetch unit test.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
         // Set XML Components
@@ -72,73 +73,6 @@ public class UnitTest extends AppCompatActivity {
         bank = new Bank();
         bank = bank.get1B();
         setQnA(bank);
-
-//        bank = new Bank();
-//        switch (quiz_id) {
-//            case "1B":
-//                bank = bank.get1B();
-//                break;
-//            case "1C":
-//                bank = bank.get1C();
-//                break;
-//            case "1D":
-//                bank = bank.get1D();
-//                break;
-//            case "2B":
-//                bank = bank.get2B();
-//                break;
-//            case "2C":
-//                bank = bank.get2C();
-//                break;
-//            case "2D":
-//                bank = bank.get2D();
-//                break;
-//            case "3B":
-//                bank = bank.get3B();
-//                break;
-//            case "3C":
-//                bank = bank.get3C();
-//                break;
-//            case "4B":
-//                bank = bank.get4B();
-//                break;
-//            case "5B":
-//                bank = bank.get5B();
-//                break;
-//            case "5C":
-//                bank = bank.get5C();
-//                break;
-//            default:
-//                Toast.makeText(getApplicationContext(), "Error: Couldn't fetch quiz.", Toast.LENGTH_SHORT).show();
-//                return;
-//        }
-//
-//
-//        question.setText(bank.question);
-//        btnA.setText(bank.mcA);
-//        btnB.setText(bank.mcB);
-//        btnC.setText(bank.mcC);
-//        btnD.setText(bank.mcD);
-//        title.setText(bank.title);
-//        img_character.setImageResource(bank.character);
-//
-//
-//        switch (bank.answer) {
-//            case "A":
-//                correctAnswerId = id_A;
-//                break;
-//            case "B":
-//                correctAnswerId = id_B;
-//                break;
-//            case "C":
-//                correctAnswerId = id_C;
-//                break;
-//            case "D":
-//                correctAnswerId = id_D;
-//                break;
-//            default:
-//                correctAnswerId = 0; // error checking
-//        }
 
     }
 
@@ -219,6 +153,10 @@ public class UnitTest extends AppCompatActivity {
     public void onClickGoToNextQuestion(View view) {
         Bank[] bankList = new Bank[] { bank.get1C(), bank.get1D()};
         setQnA(bankList[bankListCount]);
+        if (btn_nextLesson.getText().equals("Finish")){
+            Intent i = new Intent(this, TestLesson.class);
+            startActivity(i);
+        }
         if (bankListCount < (bankList.length-1)) {
             bankListCount++;
         } else {
