@@ -15,6 +15,13 @@ public class User {
         this.rank = 0;
     }
 
+    public User(String username, String imageURL, String status, String search) {
+        this.username = username;
+        this.imageURL = imageURL;
+        this.status = status;
+        this.search = search;
+    }
+
 
     public String getUuid() {
         return uuid;
