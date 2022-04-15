@@ -31,7 +31,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="10dp" >
 
@@ -48,12 +48,14 @@
                     android:src="@drawable/character"
                     />
                 <TextView
+                    android:layout_marginTop="10dp"
                     android:id="@+id/tv_subquiz_question"
                     android:layout_marginLeft="35dp"
+                    android:layout_marginRight="35dp"
                     android:text="Question "
                     android:layout_gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="17sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

@@ -18,7 +18,7 @@ public class TestSublesson extends AppCompatActivity {
 
     public void onClickToGoQuiz(View view){
         Intent i = new Intent(this, Quiz1b.class);
-        String quizId = "1B";
+        String quizId = "5C";
         i.putExtra("QUIZ_ID",quizId);
         startActivity(i);
     }

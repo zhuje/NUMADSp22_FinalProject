@@ -34,6 +34,7 @@ public class Quiz1b extends AppCompatActivity {
     Class nextLesson = TestActivity.class;
     private static final String KEY_CORRECT_ANSWER_ID = "KEY_CORRECT_ANSWER_ID";
     int character = R.drawable.taberu;
+    String quiz_id;
 
 
     @Override
@@ -54,7 +55,7 @@ public class Quiz1b extends AppCompatActivity {
 
         Intent intent = getIntent();
         if(intent != null){
-            String quiz_id = intent.getStringExtra("QUIZ_ID");
+            quiz_id = intent.getStringExtra("QUIZ_ID");
             Log.d("QUIZ_ID : " , quiz_id);
         }
         else{
@@ -70,15 +71,45 @@ public class Quiz1b extends AppCompatActivity {
         renderSavedInstance(savedInstanceState);
 
         bank = new Bank();
-        bank  = bank.get1D();
+        switch (quiz_id) {
+            case "1B":
+                bank  = bank.get1B();
+                break;
+            case "1C":
+                bank  = bank.get1C();
+                break;
+            case "1D":
+                bank  = bank.get1D();
+                break;
+            case "2B":
+                bank  = bank.get2B();
+                break;
+            case "2C":
+                bank  = bank.get2C();
+                break;
+            case "2D":
+                bank  = bank.get2D();
+                break;
+            case "3B":
+                bank  = bank.get3B();
+                break;
+            case "3C":
+                bank  = bank.get3C();
+                break;
+            case "4B":
+                bank  = bank.get4B();
+                break;
+            case "5B":
+                bank  = bank.get5B();
+                break;
+            case "5C":
+                bank  = bank.get5C();
+                break;
+            default:
+                Toast.makeText(getApplicationContext(), "Error: Couldn't fetch quiz.", Toast.LENGTH_SHORT).show();
+                return;
+        }
 
-
-        Log.d("Gouda", bank.question);
-        Log.d("Gouda", bank.answer);
-        Log.d("Gouda", bank.mcA);
-        Log.d("Gouda", bank.mcB);
-        Log.d("Gouda", bank.mcC);
-        Log.d("Gouda", bank.mcD);
 
         question.setText( bank.question);
         btnA.setText(bank.mcA);
