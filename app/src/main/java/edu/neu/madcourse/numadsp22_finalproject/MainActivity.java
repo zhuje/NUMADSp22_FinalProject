@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.UnitTest;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
@@ -35,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickGoToSublessonQuizTest(View view){
         Intent intent = new Intent(this, TestSublesson.class);
+        startActivity(intent);
+    }
+
+    public void onClickGoToUnitTest(View view){
+        Intent intent = new Intent(this, UnitTest.class);
         startActivity(intent);
     }
 
