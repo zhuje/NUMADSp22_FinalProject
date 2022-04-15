@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz1b;
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz;
 
 public class TestSublesson extends AppCompatActivity {
 
@@ -17,7 +17,7 @@ public class TestSublesson extends AppCompatActivity {
     }
 
     public void onClickToGoQuiz(View view){
-        Intent i = new Intent(this, Quiz1b.class);
+        Intent i = new Intent(this, Quiz.class);
         String quizId = "5C";
         i.putExtra("QUIZ_ID",quizId);
         startActivity(i);

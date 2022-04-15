@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz1b;
-import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz1c;
-
 public class MainActivity extends AppCompatActivity {
 
     Button btn;

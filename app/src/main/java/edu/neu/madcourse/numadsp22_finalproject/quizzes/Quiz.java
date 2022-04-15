@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Quiz1b extends AppCompatActivity {
+public class Quiz extends AppCompatActivity {
 
     // XML
     TextView title, question;
@@ -40,7 +40,7 @@ public class Quiz1b extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz1b);
+        setContentView(R.layout.activity_quiz);
 
         // Fetch XML Components
         title = findViewById(R.id.tv_subquiz_title);

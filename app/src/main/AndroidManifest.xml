@@ -15,10 +15,7 @@
             android:name=".TestSublesson"
             android:exported="false" />
         <activity
-            android:name=".quizzes.Quiz1c"
-            android:exported="false" />
-        <activity
-            android:name=".quizzes.Quiz1b"
+            android:name=".quizzes.Quiz"
             android:exported="false" />
         <activity
             android:name=".SublessonQuiz"

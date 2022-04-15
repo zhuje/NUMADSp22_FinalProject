@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:background="@color/colorDark"
-    tools:context=".quizzes.Quiz1b">
+    tools:context=".quizzes.Quiz">
 
     <LinearLayout
         android:layout_width="match_parent"
