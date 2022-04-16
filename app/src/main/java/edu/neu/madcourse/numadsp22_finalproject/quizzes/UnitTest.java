@@ -39,6 +39,8 @@ public class UnitTest extends AppCompatActivity {
     String unit_test_id;
     int bankListCount = 0;
     Bank[] bankList;
+    int numCorrect;
+    String finishStr = "Finish";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,12 @@ public class UnitTest extends AppCompatActivity {
         btnD = findViewById(R.id.btn_subquiz_answerD);
         btnArray = new Button[]{btnA, btnB, btnC, btnD};
         btn_nextLesson = findViewById(R.id.btn_subquiz_nextlesson);
+        img_character.setImageResource(character);
 
+        // question and answer bank
+        bank = new Bank();
+
+        // gets which unit test to render from previous intent
         Intent intent = getIntent();
         if (intent != null) {
             unit_test_id = intent.getStringExtra("UNIT_TEST_ID");
@@ -65,27 +72,48 @@ public class UnitTest extends AppCompatActivity {
             return;
         }
 
+        // init list of questions and answers for unit test
+        switch (unit_test_id){
+            case "1":
+                bankList = bank.getUT1();
+                break;
+            case "2":
+                bankList = bank.getUT2();
+                break;
+            default:
+                Toast.makeText(getApplicationContext(), "Error: Could not retrieve Unit Test ID.", Toast.LENGTH_SHORT).show();
+                return;
+        }
 
-        // Set XML Components
-        img_character.setImageResource(character);
+
+
 
         // TODO On Rotation -- Re-render Saved State
         // renderSavedInstance(savedInstanceState);
 
-        bank = new Bank();
 //        bank = bank.get1B();
 //        setQnA(bank);
 
-        bankList = new Bank[] {bank.get1B(), bank.get1C(), bank.get1D()};
+        //bankList = new Bank[] {bank.get1B(), bank.get1C(), bank.get1D()};
         setQnA(bankList[bankListCount]);
 
     }
 
-    public void clearPreviousAnswer(){
-        for (Button btn : btnArray){
+    public void clearPreviousAnswer() {
+        for (Button btn : btnArray) {
+            // reset colors of buttons to neutral (not green or red)
             btn.setBackgroundColor(getResources().getColor(R.color.yellow3));
+
+            // reset listeners on buttons -- after click gets null'ed to prevent double counting correct answers
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClickGetQuizAnswer(view);
+                }
+            });
         }
     }
+
 
     public void setQnA(Bank bank){
         clearPreviousAnswer();
@@ -118,7 +146,7 @@ public class UnitTest extends AppCompatActivity {
 
         // on last question set btn to say 'Finish'
         if (bankListCount == (bankList.length-1)){
-            btn_nextLesson.setText("Finish");
+            btn_nextLesson.setText(finishStr);
         }
 
     }
@@ -157,12 +185,20 @@ public class UnitTest extends AppCompatActivity {
 
 
     public void onClickGetQuizAnswer(View view) {
+        Log.d("HotDOG", String.valueOf(view.getId()));
+        Log.d("HotDOGCorrect", String.valueOf(correctAnswerId));
+
+        if (view.getId() == correctAnswerId){
+            numCorrect++;
+        }
+
         if (correctAnswerId == 0) {
             Toast.makeText(getApplicationContext(), "Error occurred, couldn't fetch the correct answer.", Toast.LENGTH_SHORT).show();
             return;
         }
         for (Button btn : btnArray) {
             btn.setBackgroundColor(getResources().getColor(R.color.redInCorrect));
+            btn.setOnClickListener(null); // sets listener null, prevents double count correct answers
         }
         Button correctBtn = findViewById(correctAnswerId);
         correctBtn.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
@@ -170,7 +206,7 @@ public class UnitTest extends AppCompatActivity {
 
 
     public void onClickGoToNextQuestion(View view) {
-        if (btn_nextLesson.getText().equals("Finish")){
+        if (btn_nextLesson.getText().equals(finishStr)){
             Intent i = new Intent(this, TestLesson.class);
             startActivity(i);
         }

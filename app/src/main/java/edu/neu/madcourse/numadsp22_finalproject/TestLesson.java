@@ -17,9 +17,15 @@ public class TestLesson extends AppCompatActivity {
         setContentView(R.layout.activity_test_lesson);
     }
 
-    public void onClickGoToUnitTest(View view){
+    public void onClickGoToUnitTest1(View view){
         Intent i = new Intent(this, UnitTest.class);
         i.putExtra("UNIT_TEST_ID","1");
+        startActivity(i);
+    }
+
+    public void onClickGoToUnitTest2(View view){
+        Intent i = new Intent(this, UnitTest.class);
+        i.putExtra("UNIT_TEST_ID","2");
         startActivity(i);
     }
 }

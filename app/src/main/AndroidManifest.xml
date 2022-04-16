@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMADSp22_FinalProject">
         <activity
+            android:name=".quizzes.UnitTestResults"
+            android:exported="false" />
+        <activity
             android:name=".TestLesson"
             android:exported="false" />
         <activity

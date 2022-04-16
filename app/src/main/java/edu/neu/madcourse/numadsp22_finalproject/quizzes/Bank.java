@@ -2,6 +2,16 @@ package edu.neu.madcourse.numadsp22_finalproject.quizzes;
 
 import edu.neu.madcourse.numadsp22_finalproject.R;
 
+
+/**
+ * Bank represent a bank question and answers for the Sub-Lesson Quizzes
+ * and Unit Tests.
+ * Lesson 1: 1B, 1C, 1D
+ * Lesson 2: 2B, 2C, 2D
+ * Lesson 3: 3B, 3C
+ * Lesson 4: 4B,
+ * Lesson 5: 5B, 5C
+ */
 public class Bank {
 
     String question, answer, mcA, mcB, mcC, mcD, title;
@@ -175,6 +185,15 @@ public class Bank {
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
+
+    public Bank[] getUT1(){
+        return new Bank[] {get1B(), get1C(), get1D(), get1B(), get1C()};
+    }
+
+    public Bank[] getUT2(){
+        return new Bank[] {get2B(), get2C(), get2D(), get2B(), get2C()};
+    }
+
 
 
 }
