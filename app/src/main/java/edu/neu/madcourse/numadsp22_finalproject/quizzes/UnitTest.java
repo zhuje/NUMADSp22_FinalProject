@@ -38,11 +38,13 @@ public class UnitTest extends AppCompatActivity {
     int character = R.drawable.taberu;
     String unit_test_id;
     int bankListCount = 0;
+    Bank[] bankList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unit_test);
+
         // Fetch XML Components
         title = findViewById(R.id.tv_subquiz_title);
         question = findViewById(R.id.tv_subquiz_question);
@@ -63,19 +65,31 @@ public class UnitTest extends AppCompatActivity {
             return;
         }
 
+
         // Set XML Components
         img_character.setImageResource(character);
 
-        // On Rotation -- Re-render Saved State
-        renderSavedInstance(savedInstanceState);
+        // TODO On Rotation -- Re-render Saved State
+        // renderSavedInstance(savedInstanceState);
 
         bank = new Bank();
-        bank = bank.get1B();
-        setQnA(bank);
+//        bank = bank.get1B();
+//        setQnA(bank);
+
+        bankList = new Bank[] {bank.get1B(), bank.get1C(), bank.get1D()};
+        setQnA(bankList[bankListCount]);
 
     }
 
+    public void clearPreviousAnswer(){
+        for (Button btn : btnArray){
+            btn.setBackgroundColor(getResources().getColor(R.color.yellow3));
+        }
+    }
+
     public void setQnA(Bank bank){
+        clearPreviousAnswer();
+
         question.setText(bank.question);
         btnA.setText(bank.mcA);
         btnB.setText(bank.mcB);
@@ -150,14 +164,26 @@ public class UnitTest extends AppCompatActivity {
 
 
     public void onClickGoToNextQuestion(View view) {
-        Bank[] bankList = new Bank[] { bank.get1C(), bank.get1D()};
-        setQnA(bankList[bankListCount]);
+//        Bank[] bankList = new Bank[] { bank.get1C(), bank.get1D()};
+//        setQnA(bankList[bankListCount]);
+//        if (btn_nextLesson.getText().equals("Finish")){
+//            Intent i = new Intent(this, TestLesson.class);
+//            startActivity(i);
+//        }
+//        if (bankListCount < (bankList.length-1)) {
+//            bankListCount++;
+//        } else {
+//            btn_nextLesson.setText("Finish");
+//        }
+
+        //Bank[] bankList = new Bank[] { bank.get1C(), bank.get1D()};
         if (btn_nextLesson.getText().equals("Finish")){
             Intent i = new Intent(this, TestLesson.class);
             startActivity(i);
         }
         if (bankListCount < (bankList.length-1)) {
             bankListCount++;
+            setQnA(bankList[bankListCount]);
         } else {
             btn_nextLesson.setText("Finish");
         }
