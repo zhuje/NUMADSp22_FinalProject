@@ -63,7 +63,6 @@ public class UnitTest extends AppCompatActivity {
             return;
         }
 
-
         // Set XML Components
         img_character.setImageResource(character);
 
