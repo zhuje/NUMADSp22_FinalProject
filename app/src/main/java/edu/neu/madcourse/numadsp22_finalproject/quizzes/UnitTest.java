@@ -115,6 +115,12 @@ public class UnitTest extends AppCompatActivity {
             default:
                 correctAnswerId = 0; // error checking
         }
+
+        // on last question set btn to say 'Finish'
+        if (bankListCount == (bankList.length-1)){
+            btn_nextLesson.setText("Finish");
+        }
+
     }
 
 
@@ -164,19 +170,6 @@ public class UnitTest extends AppCompatActivity {
 
 
     public void onClickGoToNextQuestion(View view) {
-//        Bank[] bankList = new Bank[] { bank.get1C(), bank.get1D()};
-//        setQnA(bankList[bankListCount]);
-//        if (btn_nextLesson.getText().equals("Finish")){
-//            Intent i = new Intent(this, TestLesson.class);
-//            startActivity(i);
-//        }
-//        if (bankListCount < (bankList.length-1)) {
-//            bankListCount++;
-//        } else {
-//            btn_nextLesson.setText("Finish");
-//        }
-
-        //Bank[] bankList = new Bank[] { bank.get1C(), bank.get1D()};
         if (btn_nextLesson.getText().equals("Finish")){
             Intent i = new Intent(this, TestLesson.class);
             startActivity(i);
@@ -184,10 +177,7 @@ public class UnitTest extends AppCompatActivity {
         if (bankListCount < (bankList.length-1)) {
             bankListCount++;
             setQnA(bankList[bankListCount]);
-        } else {
-            btn_nextLesson.setText("Finish");
         }
-
     }
 
 }
