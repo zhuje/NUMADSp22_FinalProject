@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.TestActivity;
-import edu.neu.madcourse.numadsp22_finalproject.TestLesson;
+import edu.neu.madcourse.numadsp22_finalproject.Util;
 
 public class UnitTest extends AppCompatActivity {
 
@@ -66,7 +66,7 @@ public class UnitTest extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null) {
             unit_test_id = intent.getStringExtra("UNIT_TEST_ID");
-            Log.d("UNIT_TEST_ID : ", unit_test_id);
+            Log.d("UNIT_TEST_ID", unit_test_id);
         } else {
             Toast.makeText(this, "Error: Couldn't fetch unit test.", Toast.LENGTH_SHORT).show();
             return;
@@ -207,7 +207,9 @@ public class UnitTest extends AppCompatActivity {
 
     public void onClickGoToNextQuestion(View view) {
         if (btn_nextLesson.getText().equals(finishStr)){
-            Intent i = new Intent(this, TestLesson.class);
+            Intent i = new Intent(this, UnitTestResults.class);
+            i.putExtra(Util.KEY_NUM_CORRECT, numCorrect);
+            i.putExtra(Util.KEY_UNIT_TEST_ID, unit_test_id);
             startActivity(i);
         }
         if (bankListCount < (bankList.length-1)) {

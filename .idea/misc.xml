@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/layout/activity_test_lesson.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_test_sublesson.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_unit_test.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_unit_test_results.xml" value="0.1037037037037037" />
       </map>
     </option>
   </component>

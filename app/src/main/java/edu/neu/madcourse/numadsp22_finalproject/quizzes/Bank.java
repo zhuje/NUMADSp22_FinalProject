@@ -186,6 +186,7 @@ public class Bank {
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
 
+    // TODO enter questions for UT1 to UT5
     public Bank[] getUT1(){
         return new Bank[] {get1B(), get1C(), get1D(), get1B(), get1C()};
     }
