@@ -59,6 +59,22 @@
             android:exported="false"
             />
         <activity
+            android:name=".Lesson1A_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1B_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1C_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1D_Content"
+            android:exported="false"
+            />
+        <activity
             android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">
 

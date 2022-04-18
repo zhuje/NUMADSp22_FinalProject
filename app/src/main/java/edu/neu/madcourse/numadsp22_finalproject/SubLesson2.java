@@ -53,11 +53,13 @@ public class SubLesson2 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
+
                     if (userRank < 6) {
                         updateUserRank();
                     }
                 }
                 if (position == 1 && userRank >= 6){
+
                     if (userRank < 7) {
                         updateUserRank();
                     }

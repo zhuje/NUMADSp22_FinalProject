@@ -71,6 +71,7 @@ public class SubLesson1 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
+                    startActivity(new Intent(SubLesson1.this, Lesson1A_Content.class));
                     if (userRank < 1) {
                         updateUserRank();
                     }
@@ -86,6 +87,7 @@ public class SubLesson1 extends AppCompatActivity {
 //                    unlockLesson2.lockList[1] = UNLOCK;
                 }
                 if (position == 1 && userRank >= 1){
+                    startActivity(new Intent(SubLesson1.this, Lesson1B_Content.class));
                     if (userRank < 2) {
                         updateUserRank();
                     }
@@ -95,6 +97,7 @@ public class SubLesson1 extends AppCompatActivity {
 //                    lockList[2] = UNLOCK;
                 }
                 if (position == 2 && userRank >=2) {
+                    startActivity(new Intent(SubLesson1.this, Lesson1C_Content.class));
                     if (userRank < 3) {
                         updateUserRank();
                     }
@@ -106,6 +109,7 @@ public class SubLesson1 extends AppCompatActivity {
 //
                 }
                 if (position == 3 && userRank >=3){
+                    startActivity(new Intent(SubLesson1.this, Lesson1D_Content.class));
                     if (userRank < 4) {
                         updateUserRank();
                     }
