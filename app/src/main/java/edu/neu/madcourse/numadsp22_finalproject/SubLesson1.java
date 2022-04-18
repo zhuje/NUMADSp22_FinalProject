@@ -29,6 +29,8 @@ public class SubLesson1 extends AppCompatActivity {
     private String userUUID;
     private DatabaseReference databaseReference;
     private SubLessonsAdapter adapter;
+    private ValueEventListener lockListener;
+    private DatabaseReference rankDatabaseReference;
     final int LOCK = R.drawable.redlock2;
     final int UNLOCK = R.drawable.greenlock2;
     String lessonList[] = {"Lesson 1A", "Lesson 1B", "Lesson 1C", "Lesson 1D", "UNIT QUIZ"};
@@ -38,14 +40,13 @@ public class SubLesson1 extends AppCompatActivity {
 
     ListView listView;
 
-    int L1UserRank = 0;
+    //int L1UserRank = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_lesson1);
         // set as nominal value for error checking
-        userRank = -1;
         authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
         userUUID = authUserProfile.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -53,12 +54,12 @@ public class SubLesson1 extends AppCompatActivity {
         //MainActivity unlockLessons = new MainActivity();
 
 
-        if(L1UserRank == 1){
-            lockList[1] = UNLOCK;
-        }
-        if(L1UserRank == 2){
-            lockList[2] = UNLOCK;
-        }
+//        if(L1UserRank == 1){
+//            lockList[1] = UNLOCK;
+//        }
+//        if(L1UserRank == 2){
+//            lockList[2] = UNLOCK;
+//        }
 
 
         listView = (ListView) findViewById(R.id.course_list);
@@ -123,9 +124,9 @@ public class SubLesson1 extends AppCompatActivity {
     public void userRankListener(){
 
         // pseduocode | user.child("Users").child(authUserProfile.getUID()) -> data snapshot -> rank
-        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID);
+        rankDatabaseReference = databaseReference.child("Users").child(userUUID);
         // add listener to check for changes in values?
-        userRankRef.addValueEventListener(new ValueEventListener() {
+        lockListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User value = dataSnapshot.getValue(User.class);
@@ -155,7 +156,8 @@ public class SubLesson1 extends AppCompatActivity {
                 toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                 toast.show();
             }
-        });
+        };
+        rankDatabaseReference.addValueEventListener(lockListener);
     }
 
     /**
@@ -186,5 +188,16 @@ public class SubLesson1 extends AppCompatActivity {
 
             }
         });
+    }
+
+    /**
+     * This is for the back button
+     */
+    @Override
+    public void onBackPressed(){
+        // this will override the back pressed to give the correct method way.
+        rankDatabaseReference.removeEventListener(lockListener);
+        finish();
+        super.onBackPressed();
     }
 }

@@ -82,23 +82,19 @@ public class MainLessonsScreen extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 // TODO -- replace TestActivity.class with sublesson activity
                 if(position == 0){
-                    rankDatabaseReference.removeEventListener(lockListener);
+
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson1.class));
                 }
                 if(position == 1 && userRank >= 5 ){
-                    rankDatabaseReference.removeEventListener(lockListener);
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson2.class));
                 }
                 if(position == 2 && userRank >= 10 ){
-                    rankDatabaseReference.removeEventListener(lockListener);
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson3.class));
                 }
                 if(position == 3 && userRank >= 14 ){
-                    rankDatabaseReference.removeEventListener(lockListener);
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson4.class));
                 }
                 if(position == 4 && userRank >= 17){
-                    rankDatabaseReference.removeEventListener(lockListener);
                     startActivity(new Intent(MainLessonsScreen.this, SubLesson5.class));
                 }
             }
@@ -172,5 +168,16 @@ public class MainLessonsScreen extends AppCompatActivity {
 
             }
         });
+    }
+
+    /**
+     * This is for the back button
+     */
+    @Override
+    public void onBackPressed(){
+        // this will override the back pressed to give the correct method way.
+        rankDatabaseReference.removeEventListener(lockListener);
+        finish();
+        super.onBackPressed();
     }
 }
