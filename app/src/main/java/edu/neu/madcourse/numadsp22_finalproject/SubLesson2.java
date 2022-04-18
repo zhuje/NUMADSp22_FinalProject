@@ -2,10 +2,13 @@ package edu.neu.madcourse.numadsp22_finalproject;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,6 +17,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 public class SubLesson2 extends AppCompatActivity {
@@ -44,6 +49,38 @@ public class SubLesson2 extends AppCompatActivity {
         adapter = new SubLessonsAdapter(getApplicationContext(), lessonList, lockList,
                 lessonOneNum);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if(position == 0){
+                    if (userRank < 6) {
+                        updateUserRank();
+                    }
+                }
+                if (position == 1 && userRank >= 6){
+                    if (userRank < 7) {
+                        updateUserRank();
+                    }
+                }
+                if (position == 2 && userRank >=7) {
+                    if (userRank < 8) {
+                        updateUserRank();
+                    }
+                }
+                if (position == 3 && userRank >=8){
+                    if (userRank < 9) {
+                        updateUserRank();
+                    }
+                }
+
+                if (position == 4 && userRank >=9){
+                    if (userRank < 10) {
+                        updateUserRank();
+                    }
+                }
+
+            }
+        });
     }
 
     public void userRankListener(){
@@ -58,16 +95,16 @@ public class SubLesson2 extends AppCompatActivity {
                 if (value != null){
                     Integer myRank = value.getRank();
                     userRank = myRank;
-                    if(userRank >= 5){
+                    if(userRank >= 6){
                         lockList[1] = UNLOCK;
                     }
-                    if(userRank >= 2){
+                    if(userRank >= 7){
                         lockList[2] = UNLOCK;
                     }
-                    if(userRank >= 3){
+                    if(userRank >= 8){
                         lockList[3] = UNLOCK;
                     }
-                    if(userRank >= 4){
+                    if(userRank >= 9){
                         lockList[4] = UNLOCK;
                     }
                     adapter.notifyDataSetChanged();
@@ -83,5 +120,46 @@ public class SubLesson2 extends AppCompatActivity {
             }
         };
         rankDatabaseReference.addValueEventListener(lockListener);
+    }
+
+    /**
+     * Used to increment the user rank when needed.
+     */
+    public void updateUserRank(){
+        // start off by getting the value
+        DatabaseReference userRankRef = databaseReference.child("Users").child(userUUID).child("rank");
+        // now run transaction
+        userRankRef.runTransaction(new Transaction.Handler() {
+            @NonNull
+            @Override
+            public Transaction.Result doTransaction(@NonNull MutableData currentData) {
+                // get value
+                Integer userValue = currentData.getValue(Integer.class);
+                // increment it
+                if (userValue == null) {
+                    return Transaction.abort();
+                } else {
+                    Integer newRank = userValue + 1;
+                    currentData.setValue(newRank);
+                }
+                return Transaction.success(currentData);
+            }
+
+            @Override
+            public void onComplete(@Nullable DatabaseError error, boolean committed, @Nullable DataSnapshot currentData) {
+
+            }
+        });
+    }
+
+    /**
+     * This is for the back button
+     */
+    @Override
+    public void onBackPressed(){
+        // this will override the back pressed to give the correct method way.
+        rankDatabaseReference.removeEventListener(lockListener);
+        finish();
+        super.onBackPressed();
     }
 }
