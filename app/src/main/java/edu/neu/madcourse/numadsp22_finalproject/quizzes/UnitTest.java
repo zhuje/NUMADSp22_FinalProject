@@ -85,9 +85,6 @@ public class UnitTest extends AppCompatActivity {
                 return;
         }
 
-
-
-
         // TODO On Rotation -- Re-render Saved State
         // renderSavedInstance(savedInstanceState);
 
@@ -166,10 +163,10 @@ public class UnitTest extends AppCompatActivity {
 
 
     private void renderSavedInstance(Bundle savedInstanceState) {
-        boolean isThereASavedState = savedInstanceState != null && savedInstanceState.containsKey(KEY_CORRECT_ANSWER_ID);
+        boolean saveStatePresent = savedInstanceState != null && savedInstanceState.containsKey(KEY_CORRECT_ANSWER_ID);
 
         // re-render from save state
-        if (isThereASavedState) {
+        if (saveStatePresent) {
             correctAnswerId = savedInstanceState.getInt(KEY_CORRECT_ANSWER_ID);
             if (correctAnswerId == 0) {
                 Toast.makeText(getApplicationContext(), "Error occurred, couldn't fetch the correct answer.", Toast.LENGTH_SHORT).show();
