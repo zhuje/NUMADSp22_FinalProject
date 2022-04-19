@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.neu.madcourse.numadsp22_finalproject">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -32,6 +32,10 @@
             android:exported="false" />
         <activity
             android:name=".TestActivity"
+             android:exported="false"
+            />
+        <activity
+            android:name=".Verb_List"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
@@ -50,6 +54,53 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainLessonsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SubLesson1"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson2"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson3"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson4"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SubLesson5"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1A_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1B_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1C_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".Lesson1D_Content"
+            android:exported="false"
+            />
+        <activity
+            android:name=".SplashScreen.SplashScreenActivity"
+            android:exported="true">
+
         </activity>
     </application>
 
