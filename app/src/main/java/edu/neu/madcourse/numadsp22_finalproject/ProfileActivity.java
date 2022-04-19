@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -51,9 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView tv_username, tv_profile_rank;
     DatabaseReference databaseReference;
     StorageReference storageReference;
-    private static final int IMAGE_REQUEST = 1;
-    private Uri imageUri;
-    private StorageTask<UploadTask.TaskSnapshot> uploadTask;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +61,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        bottomNavigationView = findViewById(R.id.bottomNav);
+
+        bottomNavigationView.setOnItemSelectedListener(bottomNavmethod);
 
         et_pwd = findViewById(R.id.et_profile_password);
         et_email = findViewById(R.id.et_profile_email);
@@ -78,6 +81,33 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private BottomNavigationView.OnItemSelectedListener bottomNavmethod;
+
+    {
+        bottomNavmethod = item -> {
+
+            switch (item.getItemId()) {
+
+
+                case R.id.message:
+                    Intent intent1 = new Intent(ProfileActivity.this, MainActivity.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.profile:
+                    break;
+                case R.id.logout:
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                    break;
+
+
+            }
+
+            return true;
+        };
     }
 
 
