@@ -94,7 +94,7 @@ public class UnitTest extends AppCompatActivity {
         }
 
         // TODO On Rotation -- Re-render Saved State
-        // renderSavedInstance(savedInstanceState);
+        renderSavedInstance(savedInstanceState);
 
 //        bank = bank.get1B();
 //        setQnA(bank);
@@ -175,16 +175,16 @@ public class UnitTest extends AppCompatActivity {
 
         // re-render from save state
         if (saveStatePresent) {
-            correctAnswerId = savedInstanceState.getInt(KEY_CORRECT_ANSWER_ID);
-            if (correctAnswerId == 0) {
-                Toast.makeText(getApplicationContext(), "Error occurred, couldn't fetch the correct answer.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            for (Button btn : btnArray) {
-                btn.setBackgroundColor(getResources().getColor(R.color.redInCorrect));
-            }
-            Button correctBtn = findViewById(correctAnswerId);
-            correctBtn.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+//            correctAnswerId = savedInstanceState.getInt(KEY_CORRECT_ANSWER_ID);
+//            if (correctAnswerId == 0) {
+//                Toast.makeText(getApplicationContext(), "Error occurred, couldn't fetch the correct answer.", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//            for (Button btn : btnArray) {
+//                btn.setBackgroundColor(getResources().getColor(R.color.redInCorrect));
+//            }
+//            Button correctBtn = findViewById(correctAnswerId);
+//            correctBtn.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
         }
     }
 

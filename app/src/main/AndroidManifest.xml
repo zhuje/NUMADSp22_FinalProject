@@ -19,6 +19,7 @@
             android:exported="false" />
         <activity
             android:name=".quizzes.UnitTest"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".TestSublesson"
