@@ -93,13 +93,6 @@ public class UnitTest extends AppCompatActivity {
                 return;
         }
 
-        // TODO On Rotation -- Re-render Saved State
-        renderSavedInstance(savedInstanceState);
-
-//        bank = bank.get1B();
-//        setQnA(bank);
-
-        //bankList = new Bank[] {bank.get1B(), bank.get1C(), bank.get1D()};
         setQnA(bankList[bankListCount]);
 
     }
@@ -168,26 +161,6 @@ public class UnitTest extends AppCompatActivity {
         outState.putInt(KEY_CORRECT_ANSWER_ID, correctAnswerId);
         super.onSaveInstanceState(outState);
     }
-
-
-    private void renderSavedInstance(Bundle savedInstanceState) {
-        boolean saveStatePresent = savedInstanceState != null && savedInstanceState.containsKey(KEY_CORRECT_ANSWER_ID);
-
-        // re-render from save state
-        if (saveStatePresent) {
-//            correctAnswerId = savedInstanceState.getInt(KEY_CORRECT_ANSWER_ID);
-//            if (correctAnswerId == 0) {
-//                Toast.makeText(getApplicationContext(), "Error occurred, couldn't fetch the correct answer.", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//            for (Button btn : btnArray) {
-//                btn.setBackgroundColor(getResources().getColor(R.color.redInCorrect));
-//            }
-//            Button correctBtn = findViewById(correctAnswerId);
-//            correctBtn.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
-        }
-    }
-
 
     public void onClickGetQuizAnswer(View view) {
         Log.d("HotDOG", String.valueOf(view.getId()));
