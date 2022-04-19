@@ -86,7 +86,7 @@ public class UnitTestResults extends AppCompatActivity {
             databaseReference.child("Users").child(authUserProfile.getUid()).child("rank").setValue(newRank)
                     .addOnCompleteListener( taskUpdateRank -> {
                         if (taskUpdateRank.isSuccessful() ){
-                            Toast.makeText(UnitTestResults.this, "Rank updated to " + String.valueOf(newRank), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UnitTestResults.this, "Your rank updated to : " + String.valueOf(newRank), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(UnitTestResults.this, "Error: Could not update your rank.", Toast.LENGTH_SHORT).show();
                         }
