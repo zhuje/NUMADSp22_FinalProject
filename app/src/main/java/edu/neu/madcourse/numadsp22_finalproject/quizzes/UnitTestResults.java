@@ -79,6 +79,9 @@ public class UnitTestResults extends AppCompatActivity {
                 case "4":
                     newRank = 17;
                     break;
+                case "5":
+                    comment.setText("Congratulations, you mastered all the lessons!");
+                    break;
                 default:
                     Toast.makeText(getApplicationContext(), "Error: Could not update rank because we couldn't retrieve Unit Test ID.", Toast.LENGTH_SHORT).show();
                     return;

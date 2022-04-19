@@ -33,4 +33,16 @@ public class TestLesson extends AppCompatActivity {
         i.putExtra(Util.KEY_UNIT_TEST_ID,"3");
         startActivity(i);
     }
+
+    public void onClickGoToUnitTest4(View view){
+        Intent i = new Intent(this, UnitTest.class);
+        i.putExtra(Util.KEY_UNIT_TEST_ID,"4");
+        startActivity(i);
+    }
+
+    public void onClickGoToUnitTest5(View view){
+        Intent i = new Intent(this, UnitTest.class);
+        i.putExtra(Util.KEY_UNIT_TEST_ID,"5");
+        startActivity(i);
+    }
 }

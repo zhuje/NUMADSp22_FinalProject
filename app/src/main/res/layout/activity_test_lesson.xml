@@ -35,8 +35,24 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DEMO Unit Test2"
+        android:text="DEMO Unit Test3"
         android:onClick="onClickGoToUnitTest3"
+        />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DEMO Unit Test4"
+        android:onClick="onClickGoToUnitTest4"
+        />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DEMO Unit Test5"
+        android:onClick="onClickGoToUnitTest5"
         />
 
 </LinearLayout>

@@ -38,6 +38,11 @@ public class Bank {
         this.title = title;
     }
 
+
+    /**
+     * Quiz Questions - Lesson 1
+     */
+
     public Bank get1B(){
         String question = "今晩、レストランで晩ご飯を ____________.\n" +
                 "Konban, resutoran de bangohan wo ____________.\n";
@@ -79,6 +84,10 @@ public class Bank {
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
+
+    /**
+     * Quiz Questions - Lesson 2
+     */
 
     public Bank get2B(){
         String question = "スミスさんは先週のパーティーに _____.\n" +
@@ -122,6 +131,10 @@ public class Bank {
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
 
+    /**
+     * Quiz Questions - Lesson 3
+     */
+
     public Bank get3B(){
         String question = "今日の試験を勉強  _______.\n" +
                 "Kyou no shiken wo benkyou ______.\n";
@@ -150,6 +163,10 @@ public class Bank {
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
 
+    /**
+     * Quiz Questions - Lesson 4
+     */
+
     public Bank get4B(){
         String question = "メールで連絡 __________ください。\n" +
                 "Me-ru de renraku _________ kudasai.\n";
@@ -163,6 +180,10 @@ public class Bank {
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
+
+    /**
+     * Quiz Questions - Lesson 5
+     */
 
     public Bank get5B(){
         String question = "その山に登ることが _______. \n" +
@@ -391,9 +412,154 @@ public class Bank {
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
 
+    /**
+     * UNIT TEST 4 QUESTIONS
+     */
+
+    public Bank getUT4_1(){
+        String question = "昨日は一日中勉強 _________ いた.\n" +
+                "Kinou wa ichinichijuu benkyou _________ ita.\n";
+        String answer = "B";
+        String mcA = "A. すって sutte";
+        String mcB = "B. して shite";
+        String mcC = "C. しって shitte";
+        String mcD = "D. すて sute";
+        String title = "Unit Test 4 : Q1";
+        int character = R.drawable.character;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+    public Bank getUT4_2(){
+        String question = "ここに _________ ください. \n" +
+                "Koko ni _________ kudasai.\n";
+        String answer = "B";
+        String mcA = "A. こって kotte";
+        String mcB = "B. きて kite";
+        String mcC = "C. きって kitte";
+        String mcD = "D. こて kotee";
+        String title = "Unit Test 4 : Q2";
+        int character = R.drawable.kuru;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+    public Bank getUT4_3(){
+        String question = "今朝ご飯を __________ いる.\n" +
+                "Ima asagohan wo __________ iru.\n";
+        String answer = "B";
+        String mcA = "A. 食べって tabette";
+        String mcB = "B. 食べて tabete";
+        String mcC = "C. 食べんて ttabente";
+        String mcD = "D. 食べで tabede";
+        String title = "Unit Test 4 : Q3";
+        int character = R.drawable.taberu;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+    public Bank getUT4_4(){
+        String question = "まだ ________ いる。\n" +
+                "Mada ________ iru.\n";
+        String answer = "A";
+        String mcA = "A. おもって omotte";
+        String mcB = "B. おもて omote";
+        String mcC = "C. おもいて omoite";
+        String mcD = "D. おもいで omoide";
+        String title = "Unit Test 4 : Q4";
+        int character = R.drawable.omou;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
 
 
-    // TODO enter questions for UT1 to UT5
+    public Bank getUT4_5(){
+        String question = "家でパソコンを _______ いる。\n" +
+                "Ie de pasokon wo ________ iru.\n";
+        String answer = "C";
+        String mcA = "A. 持つて motsute";
+        String mcB = "B. 持て mote";
+        String mcC = "C. 持って motte";
+        String mcD = "D. 持たて motate";
+        String title = "Unit Test 4 : Q5";
+        int character = R.drawable.motsu;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+    /**
+     * UNIT TEST 5 QUESTIONS
+     */
+
+    public Bank getUT5_1(){
+        String question = "今日は学校に __________.\n" +
+                "Kyou wa gakkou ni ___________.\n";
+        String answer = "C";
+        String mcA = "A. これる koreru";
+        String mcB = "B. ける keru";
+        String mcC = "C. こられる korareru";
+        String mcD = "D. きれる kireru";
+        String title = "Unit Test 5 : Q1";
+        int character = R.drawable.kuru;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+    public Bank getUT5_2(){
+        String question = "箸でサラダを __________.\n" +
+                "Hashi de sarada wo __________.\n";
+        String answer = "C";
+        String mcA = "A. 食べる taberu";
+        String mcB = "B. 食べらる taberaru";
+        String mcC = "C. 食べられる taberareru";
+        String mcD = "D. 食べられらる taberareraru";
+        String title = "Unit Test 5 : Q2";
+        int character = R.drawable.taberu;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+
+    public Bank getUT5_3(){
+        String question = "私は海で ____________.\n" +
+                "Watashi wa umi de ____________.\n";
+        String answer = "B";
+        String mcA = "A. およがれる oyogareru";
+        String mcB = "B. およげる oyogeru";
+        String mcC = "C. およぐれる oyogureru";
+        String mcD = "D. およれる oyoreru";
+        String title = "Unit Test 5 : Q3";
+        int character = R.drawable.oyogu;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+
+    public Bank getUT5_4(){
+        String question = "彼女はみっつの外国語を_________。\n" +
+                "Kanojo wa mittsu no gaikokugo wo ________.\n";
+        String answer = "C";
+        String mcA = "A. はなされる hanasareru";
+        String mcB = "B. はなれる hanareru";
+        String mcC = "C. はなせる hanaseru";
+        String mcD = "D. はなしれる hanashireru";
+        String title = "Unit Test 5 : Q5";
+        int character = R.drawable.hanasu;
+
+        return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
+    }
+
+    public Bank getUT5_5() {
+        Bank b = get5B();
+        b.setTitle("Unit Test 5 : Q5");
+        return b;
+    }
+
+
+    /**
+     * Arrays of Unit Test Questions
+     */
+
     public Bank[] getUT1(){
         return new Bank[] {getUT1_1(), getUT1_2(), getUT1_3(), getUT1_4(), getUT1_5()};
     }
@@ -404,6 +570,14 @@ public class Bank {
 
     public Bank[] getUT3(){
         return new Bank[] {getUT3_1(), getUT3_2(), getUT3_3(), getUT3_4(), getUT3_5()};
+    }
+
+    public Bank[] getUT4(){
+        return new Bank[] {getUT4_1(), getUT4_2(), getUT4_3(), getUT4_4(), getUT4_5()};
+    }
+
+    public Bank[] getUT5(){
+        return new Bank[] {getUT5_1(), getUT5_2(), getUT5_3(), getUT5_4(), getUT5_5()};
     }
 
 
