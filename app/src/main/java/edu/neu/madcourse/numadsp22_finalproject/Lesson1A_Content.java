@@ -1,10 +1,14 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz;
 
 public class Lesson1A_Content extends AppCompatActivity {
     String lessonPoints[] = {"-Form that the verb will be if you look it up in the dictionary.",
@@ -31,4 +35,15 @@ public class Lesson1A_Content extends AppCompatActivity {
         TextView textView1 = (TextView) findViewById(R.id.translationTxt);
         textView1.setText("Translation: The cat is eating fish.");
     }
+
+    public void onClickToGoQuiz_1B(View view){
+        Intent i = new Intent(this, Quiz.class);
+        String quizId = "1B";
+        i.putExtra("QUIZ_ID",quizId);
+        startActivity(i);
+    }
+
+
+
+
 }
