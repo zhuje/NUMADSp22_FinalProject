@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.neu.madcourse.numadsp22_finalproject">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -11,6 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMADSp22_FinalProject">
+        <activity
+            android:name=".quizzes.UnitTestResults"
+            android:exported="false" />
+        <activity
+            android:name=".TestLesson"
+            android:exported="false" />
+        <activity
+            android:name=".quizzes.UnitTest"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".TestSublesson"
+            android:exported="false" />
+        <activity
+            android:name=".quizzes.Quiz"
+            android:exported="false" />
+        <activity
+            android:name=".SublessonQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+             android:exported="false"
+            />
         <activity
             android:name=".Verb_List"
             android:exported="false" />
