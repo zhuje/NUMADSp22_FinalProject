@@ -1,5 +1,6 @@
 package edu.neu.madcourse.numadsp22_finalproject.quizzes;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,26 +10,44 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.TestLesson;
 import edu.neu.madcourse.numadsp22_finalproject.Util;
 
 public class UnitTestResults extends AppCompatActivity {
 
+    // xml
     int numCorrect;
     String unit_test_id;
     TextView resultScore, comment;
-    int rank;
+    int newRank;
+
+    // database
+    FirebaseUser authUserProfile;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unit_test_results);
 
+        // db
+        authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        // xml
         resultScore = findViewById(R.id.tv_results_score);
         comment = findViewById(R.id.tv_results_comment);
 
-
+        // get information from previous activity
         Intent intent = getIntent();
         if (intent != null) {
             numCorrect = intent.getIntExtra(Util.KEY_NUM_CORRECT,0);
@@ -41,30 +60,41 @@ public class UnitTestResults extends AppCompatActivity {
 
         resultScore.setText(String.valueOf(numCorrect) + "/5");
 
+        // if user gets all questions correct increase
+        // determine new rank
         if (numCorrect == 5){
             comment.setText("Great Job! Your rank has increased");
-
             switch (unit_test_id){
                 case "1":
-                    rank = 5;
+                    newRank = 5;
                     break;
                 case "2":
-                    rank = 10;
+                    newRank = 10;
                     break;
                 case "3":
-                    rank = 14;
+                    newRank = 14;
                     break;
                 case "4":
-                    rank = 17;
+                    newRank = 17;
                     break;
                 default:
                     Toast.makeText(getApplicationContext(), "Error: Could not update rank because we couldn't retrieve Unit Test ID.", Toast.LENGTH_SHORT).show();
                     return;
             }
 
-            // TODO -- user.setRank(rank)
+            // update user rank on database
+            databaseReference.child("Users").child(authUserProfile.getUid()).child("rank").setValue(newRank)
+                    .addOnCompleteListener( taskUpdateRank -> {
+                        if (taskUpdateRank.isSuccessful() ){
+                            Toast.makeText(UnitTestResults.this, "Rank updated to " + String.valueOf(newRank), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(UnitTestResults.this, "Error: Could not update your rank.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
 
         } else {
+            // user didn't get all the questions correct
             comment.setText("5/5 is required to unlock to next lesson. Try again.");
         }
 

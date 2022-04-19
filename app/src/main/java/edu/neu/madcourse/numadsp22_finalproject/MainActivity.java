@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickGoToProfile2(View view){
-        Intent intent = new Intent(this, SublessonQuiz.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
