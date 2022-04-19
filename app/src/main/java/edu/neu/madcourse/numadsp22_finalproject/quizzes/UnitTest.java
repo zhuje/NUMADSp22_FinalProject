@@ -88,6 +88,15 @@ public class UnitTest extends AppCompatActivity {
             case "2":
                 bankList = bank.getUT2();
                 break;
+            case "3":
+                bankList = bank.getUT3();
+                break;
+//            case "4":
+//                bankList = bank.getUT4();
+//                break;
+//            case "5":
+//                bankList = bank.getUT5();
+//                break;
             default:
                 Toast.makeText(getApplicationContext(), "Error: Could not retrieve Unit Test ID.", Toast.LENGTH_SHORT).show();
                 return;
