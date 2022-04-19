@@ -7,4 +7,26 @@
         android:title="Logout"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/home"
+        android:title="Lesson"
+        android:icon="@drawable/ic_lesson"/>
+
+    <item
+        android:id="@+id/message"
+        android:title="Messages"
+        android:icon="@drawable/ic_message"/>
+
+    <item
+        android:id="@+id/verb"
+        android:title="Verbs"
+        android:icon="@drawable/ic_yomu"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"/>
+
+
+
 </menu>

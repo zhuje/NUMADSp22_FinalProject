@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/drawable-mdpi/ic_profile.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/drawable-xhdpi/ic_home.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/drawable-xhdpi/ic_lesson.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/drawable-xhdpi/ic_message.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/drawable-xhdpi/ic_yomu.xml" value="0.22864583333333333" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_chat.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_chat2.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_chat_main.xml" value="0.28306159420289856" />
@@ -14,7 +19,9 @@
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_message.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_register.xml" value="0.1546875" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.2807971014492754" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_start.xml" value="0.1546875" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/activity_test.xml" value="0.22282608695652173" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/app_bar_layout.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/bar_layout.xml" value="0.28306159420289856" />
@@ -30,8 +37,9 @@
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/fragment_users.xml" value="0.16614583333333333" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/item_container_received_message.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/item_container_recent_conversion.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/user_item.xml" value="0.16614583333333333" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/user_item.xml" value="0.264" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/layout/users_display_layout.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/menu/menu.xml" value="0.2125" />
         <entry key="..\:/Users/chiem/FinalProjectAppDev/NUMADSp22_FinalProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1296875" />
       </map>
     </option>

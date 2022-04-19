@@ -12,8 +12,8 @@ import android.os.Build;
 
 public class OreoNotification extends ContextWrapper {
 
-    private static final String CHANNEL_ID = "com.koddev.chatapp";
-    private static final String CHANNEL_NAME = "chatapp";
+    private static final String CHANNEL_ID = "edu.neu.madcourse.numadsp22_finalproject";
+    private static final String CHANNEL_NAME = "Doushi Learner";
 
     private NotificationManager notificationManager;
 

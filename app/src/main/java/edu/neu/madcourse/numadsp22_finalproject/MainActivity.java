@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     DatabaseReference reference;
     Button btn;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         profile_image = findViewById(R.id.profile_image);
         username = findViewById(R.id.username);
 
+        bottomNavigationView = findViewById(R.id.bottomNav);
+
+        bottomNavigationView.setOnItemSelectedListener(bottomNavmethod);
+
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
@@ -64,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
                 if (user.getImageURL() != null && user.getImageURL().equals("default")){
-                    profile_image.setImageResource(R.mipmap.ic_launcher);
+                    profile_image.setImageResource(R.drawable.mount_fuji);
                 } else {
 
                     //change this
@@ -115,6 +122,36 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    private BottomNavigationView.OnItemSelectedListener bottomNavmethod;
+
+    {
+        bottomNavmethod = item -> {
+
+            switch (item.getItemId()) {
+
+
+                case R.id.message:
+                    Intent intent1 = new Intent(MainActivity.this, MessageActivity.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.profile:
+                    Intent intent2 = new Intent(MainActivity.this, ProfileActivity.class);
+                    startActivity(intent2);
+                    break;
+                case R.id.logout:
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                    break;
+
+
+               }
+
+            return true;
+        };
     }
 
 

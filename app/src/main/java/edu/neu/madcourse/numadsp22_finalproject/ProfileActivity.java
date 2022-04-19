@@ -1,17 +1,29 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,15 +32,28 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 
+import java.lang.annotation.Target;
+import java.util.HashMap;
 import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    CircleImageView image_profile;
     FirebaseUser authUserProfile;
     EditText et_pwd, et_email;
     TextView tv_username, tv_profile_rank;
     DatabaseReference databaseReference;
+    StorageReference storageReference;
+    private static final int IMAGE_REQUEST = 1;
+    private Uri imageUri;
+    private StorageTask<UploadTask.TaskSnapshot> uploadTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +67,19 @@ public class ProfileActivity extends AppCompatActivity {
         et_email = findViewById(R.id.et_profile_email);
         tv_username = findViewById(R.id.tv_profile_username);
         tv_profile_rank = findViewById(R.id.tv_profile_rank);
+        image_profile = findViewById(R.id.profile_image);
 
         getUserRank();
 
         tv_username.setText(authUserProfile.getDisplayName());
         et_email.setHint(authUserProfile.getEmail());
 
+        storageReference = FirebaseStorage.getInstance().getReference("uploads");
+
+
+
     }
+
 
 
 
