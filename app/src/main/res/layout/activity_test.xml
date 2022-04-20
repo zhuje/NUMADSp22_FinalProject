@@ -28,4 +28,14 @@
         android:onClick="onClickGoToLesson"
         android:text="DEMO Lesson" />
 
+    <Button
+        android:id="@+id/btn_test_message"
+        android:onClick="onClickGoToMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEMO MESSAGE"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center_horizontal"
+        />
+
 </LinearLayout>

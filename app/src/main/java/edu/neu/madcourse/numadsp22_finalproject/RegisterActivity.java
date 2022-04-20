@@ -15,6 +15,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -85,7 +86,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                             // add user to realtime database
                             User newUser = new User(authUserProfile.getUid());
-                            databaseReference.child("Users").child(authUserProfile.getUid()).setValue(newUser)
+                            String userid = authUserProfile.getUid();
+                            HashMap<String, String> hashMap = new HashMap<>();
+                            hashMap.put("id", userid);
+                            hashMap.put("username", username);
+                            hashMap.put("imageURL", "default");
+                            hashMap.put("status", "offline");
+
+                            databaseReference.child("Users").child(authUserProfile.getUid()).setValue(hashMap)
                                     .addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
                                             // Proceed to next activity after sign-in
