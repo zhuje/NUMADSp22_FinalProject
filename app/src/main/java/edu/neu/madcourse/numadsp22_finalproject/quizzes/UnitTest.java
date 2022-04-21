@@ -172,8 +172,6 @@ public class UnitTest extends AppCompatActivity {
     }
 
     public void onClickGetQuizAnswer(View view) {
-        Log.d("HotDOG", String.valueOf(view.getId()));
-        Log.d("HotDOGCorrect", String.valueOf(correctAnswerId));
 
         if (view.getId() == correctAnswerId){
             numCorrect++;

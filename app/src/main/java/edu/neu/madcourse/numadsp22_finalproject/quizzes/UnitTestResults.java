@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import edu.neu.madcourse.numadsp22_finalproject.MainLessonsScreen;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.TestLesson;
 import edu.neu.madcourse.numadsp22_finalproject.Util;
@@ -65,6 +66,7 @@ public class UnitTestResults extends AppCompatActivity {
         // if user gets all questions correct increase
         // determine new rank
         if (numCorrect == 5){
+
             comment.setText("Great Job! The next level is unlocked.");
             switch (unit_test_id){
                 case "1":
@@ -138,7 +140,7 @@ public class UnitTestResults extends AppCompatActivity {
 
     // TODO link too return to Lesson Screen
     public void onClickBackToLessons(View view){
-        Intent i = new Intent(this, TestLesson.class);
+        Intent i = new Intent(this, MainLessonsScreen.class);
         startActivity(i);
     }
 

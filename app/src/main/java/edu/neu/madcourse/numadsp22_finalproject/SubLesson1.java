@@ -125,9 +125,9 @@ public class SubLesson1 extends AppCompatActivity {
                         Intent i = new Intent(SubLesson1.this, UnitTest.class);
                         i.putExtra(Util.KEY_UNIT_TEST_ID,"1");
                         startActivity(i);
-                    if (userRank < 5) {
-                        updateUserRank();
-                    }
+//                    if (userRank < 5) {
+//                        updateUserRank();
+//                    }
                 }
 
             }
