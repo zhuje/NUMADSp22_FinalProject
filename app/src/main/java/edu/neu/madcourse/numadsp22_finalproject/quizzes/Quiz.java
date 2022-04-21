@@ -2,8 +2,10 @@ package edu.neu.madcourse.numadsp22_finalproject.quizzes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.neu.madcourse.numadsp22_finalproject.MainLessonsScreen;
 import edu.neu.madcourse.numadsp22_finalproject.R;
-import edu.neu.madcourse.numadsp22_finalproject.TestActivity;
+import edu.neu.madcourse.numadsp22_finalproject.SubLesson1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,9 +31,7 @@ public class Quiz extends AppCompatActivity {
     Bank bank;
 
     // logic dependent
-    String lessonTitle = "Quiz 1B";
-    String correctAnswerStr = "B";
-    Class nextLesson = TestActivity.class;
+    Class nextActivity = MainLessonsScreen.class;
     private static final String KEY_CORRECT_ANSWER_ID = "KEY_CORRECT_ANSWER_ID";
     int character = R.drawable.taberu;
     String quiz_id;
@@ -74,12 +74,15 @@ public class Quiz extends AppCompatActivity {
         switch (quiz_id) {
             case "1B":
                 bank  = bank.get1B();
+                nextActivity = SubLesson1.class;
                 break;
             case "1C":
                 bank  = bank.get1C();
+                nextActivity = SubLesson1.class;
                 break;
             case "1D":
                 bank  = bank.get1D();
+                nextActivity = SubLesson1.class;
                 break;
             case "2B":
                 bank  = bank.get2B();
@@ -187,9 +190,10 @@ public class Quiz extends AppCompatActivity {
     }
 
 
-    public void onClickGoToNextLesson(View view){
+    public void onClickGoToCurrentLesson(View view){
         // DB needs to hold name of next lesson in each quiz
-        Intent intent = new Intent(this, nextLesson );
+
+        Intent intent = new Intent(this, nextActivity);
         startActivity(intent);
     }
 

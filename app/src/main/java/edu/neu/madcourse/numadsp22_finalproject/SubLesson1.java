@@ -22,6 +22,12 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1C_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1D_Content;
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.UnitTest;
+
 public class SubLesson1 extends AppCompatActivity {
 
     private FirebaseUser authUserProfile;
@@ -116,6 +122,9 @@ public class SubLesson1 extends AppCompatActivity {
                 }
 
                 if (position == 4 && userRank >=4){
+                        Intent i = new Intent(SubLesson1.this, UnitTest.class);
+                        i.putExtra(Util.KEY_UNIT_TEST_ID,"1");
+                        startActivity(i);
                     if (userRank < 5) {
                         updateUserRank();
                     }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lesson1D_Content">
+    android:padding="15dp"
+    tools:context=".Lesson1_Content.Lesson1D_Content">
 
     <TextView
         android:id="@+id/textView3"
@@ -124,10 +125,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="onClickGoToQuiz_1D"
         android:text="NEXT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

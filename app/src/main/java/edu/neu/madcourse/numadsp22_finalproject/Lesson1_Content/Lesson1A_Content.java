@@ -1,4 +1,4 @@
-package edu.neu.madcourse.numadsp22_finalproject;
+package edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,15 +8,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz;
+import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
+import edu.neu.madcourse.numadsp22_finalproject.R;
 
 public class Lesson1A_Content extends AppCompatActivity {
-    String lessonPoints[] = {"-Form that the verb will be if you look it up in the dictionary.",
-    "-Verbs introduced are in present affirmative tense",
-            "-You can often tell that it is in this tense due to the -u ending on the verb.",
-    "-There is no set future tense in Japanese - there is only ‘past’ and ‘non-past’ tenses.",
-    "-The ‘Present Affirmative’ can be used to refer to events happening in the future.",
-    "-‘Present Affirmative’ tense is a casual way of speaking, used among friends and family."};
+    String lessonPoints[] = {"- Form that the verb will be if you look it up in the dictionary.",
+    "- Verbs introduced are in present affirmative tense",
+            "- You can often tell that it is in this tense due to the -u ending on the verb.",
+    "- There is no set future tense in Japanese - there is only ‘past’ and ‘non-past’ tenses.",
+    "- The ‘Present Affirmative’ can be used to refer to events happening in the future.",
+    "- ‘Present Affirmative’ tense is a casual way of speaking, used among friends and family."};
 
     ListView listView;
 
@@ -36,10 +37,8 @@ public class Lesson1A_Content extends AppCompatActivity {
         textView1.setText("Translation: The cat is eating fish.");
     }
 
-    public void onClickToGoQuiz_1B(View view){
-        Intent i = new Intent(this, Quiz.class);
-        String quizId = "1B";
-        i.putExtra("QUIZ_ID",quizId);
+    public void onClickGoToLesson_1B(View view){
+        Intent i = new Intent(this, Lesson1B_Content.class);
         startActivity(i);
     }
 

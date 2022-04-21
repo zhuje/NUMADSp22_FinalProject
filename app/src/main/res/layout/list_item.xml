@@ -21,18 +21,12 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/character" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/LessonName"
+                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:scrollHorizontally="false"
                 android:layout_gravity="center|center_horizontal|center_vertical"
                 android:text="Lesson 1"
                 android:textColor="@color/black"

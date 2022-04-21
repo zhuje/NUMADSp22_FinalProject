@@ -39,10 +39,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickGoToTestLessons(View view){
+    public void onClickGoToUnitTests(View view){
         Intent intent = new Intent(this, TestLesson.class);
         startActivity(intent);
     }
+
+    public void onClickGoToMainLessonScreen(View view){
+        Intent intent = new Intent(this, MainLessonsScreen.class);
+        startActivity(intent);
+    }
+
 
 
 

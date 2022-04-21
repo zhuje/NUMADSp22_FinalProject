@@ -144,7 +144,7 @@ public class Bank {
         String mcC = "C. しない shinai";
         String mcD = "D. しなない shinanai";
         String title = "Quiz 3B";
-        int character = R.drawable.character;
+        int character = R.drawable.character_hv;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -176,7 +176,7 @@ public class Bank {
         String mcC = "C. しって shitte";
         String mcD = "D. すて sute";
         String title = "Quiz 4B";
-        int character = R.drawable.character;
+        int character = R.drawable.character_hv;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -194,7 +194,7 @@ public class Bank {
         String mcC = "C. だきる dakiru";
         String mcD = "D. すきる sukiru";
         String title = "Quiz 5B";
-        int character = R.drawable.character;
+        int character = R.drawable.character_hv;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -292,7 +292,7 @@ public class Bank {
         String mcC = "C. すった sutta";
         String mcD = "D. しった shitta";
         String title = "Unit Test 2 : Q1";
-        int character = R.drawable.character;
+        int character = R.drawable.character_hv;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -351,7 +351,7 @@ public class Bank {
         String mcC = "C. こないた konaita";
         String mcD = "D. こなかた konakata";
         String title = "Unit Test 3 : Q1";
-        int character = R.drawable.character;
+        int character = R.drawable.character_hv;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -425,7 +425,7 @@ public class Bank {
         String mcC = "C. しって shitte";
         String mcD = "D. すて sute";
         String title = "Unit Test 4 : Q1";
-        int character = R.drawable.character;
+        int character = R.drawable.character_hv;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }

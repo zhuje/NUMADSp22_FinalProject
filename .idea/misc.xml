@@ -3,20 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_lesson1_acontent.xml" value="0.21041666666666667" />
-        <entry key="app/src/main/res/layout/activity_lesson1_bcontent.xml" value="0.1816123188405797" />
-        <entry key="app/src/main/res/layout/activity_lesson1_ccontent.xml" value="0.21041666666666667" />
-        <entry key="app/src/main/res/layout/activity_lesson1_dcontent.xml" value="0.21041666666666667" />
+        <entry key="app/src/main/res/layout/activity_lesson1_acontent.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_lesson1_bcontent.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/activity_lesson1_ccontent.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_lesson1_dcontent.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_login_sign_up.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main_lessons_screen.xml" value="0.1773049645390071" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.1773049645390071" />
         <entry key="app/src/main/res/layout/activity_quiz1b.xml" value="0.2980995872233275" />
         <entry key="app/src/main/res/layout/activity_quiz1c.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.2542955326460481" />
-        <entry key="app/src/main/res/layout/activity_sub_lesson1.xml" value="0.21041666666666667" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson1.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson2.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson4.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sub_lesson5.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/activity_sublesson_quiz.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_sublesson_quiz1b.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.3613210441563727" />
@@ -25,6 +30,11 @@
         <entry key="app/src/main/res/layout/activity_testme.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/layout/activity_unit_test.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_unit_test_results.xml" value="0.1037037037037037" />
+        <entry key="app/src/main/res/layout/activity_verb_list.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/lesson_list_txtview_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/sub_lessons_list_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/verb_card.xml" value="0.21739130434782608" />
       </map>
     </option>
   </component>
