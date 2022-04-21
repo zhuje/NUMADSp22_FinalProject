@@ -38,7 +38,7 @@ public class MainLessonsScreen extends AppCompatActivity {
     private CustomBaseAdapter adapter;
     private BottomNavigationView bottomNavigationView;
 
-    String[] lessonList = {"Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5"};
+    String[] lessonList = {"Lesson 1 \nPresent Affirmative", "Lesson 2 \nPast Affirmative", "Lesson 3 \nNegative Present \nand Past", "Lesson 4 \nTe Form", "Lesson 5 \nPotential Present \nAffirmative"};
     int[] lockList = {UNLOCK, LOCK, LOCK, LOCK, LOCK};
 
     ListView listView;

@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/green3"
             android:text="Next Lesson"
-            android:onClick="onClickGoToNextLesson"
+            android:onClick="onClickGoToCurrentLesson"
             />
 
     </LinearLayout>

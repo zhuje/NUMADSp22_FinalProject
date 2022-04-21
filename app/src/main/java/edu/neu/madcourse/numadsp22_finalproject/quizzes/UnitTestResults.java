@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import edu.neu.madcourse.numadsp22_finalproject.MainLessonsScreen;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.TestLesson;
 import edu.neu.madcourse.numadsp22_finalproject.Util;
@@ -33,6 +34,7 @@ public class UnitTestResults extends AppCompatActivity {
     // database
     FirebaseUser authUserProfile;
     DatabaseReference databaseReference;
+    DatabaseReference userRankReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class UnitTestResults extends AppCompatActivity {
         // db
         authUserProfile = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
+        userRankReference = databaseReference.child("Users").child(authUserProfile.getUid()).child("rank");
 
         // xml
         resultScore = findViewById(R.id.tv_results_score);
@@ -63,7 +66,8 @@ public class UnitTestResults extends AppCompatActivity {
         // if user gets all questions correct increase
         // determine new rank
         if (numCorrect == 5){
-            comment.setText("Great Job! Your rank has increased");
+
+            comment.setText("Great Job! The next level is unlocked.");
             switch (unit_test_id){
                 case "1":
                     newRank = 5;
@@ -77,20 +81,51 @@ public class UnitTestResults extends AppCompatActivity {
                 case "4":
                     newRank = 17;
                     break;
+                case "5":
+                    comment.setText("Congratulations, you mastered all the lessons!");
+                    break;
                 default:
                     Toast.makeText(getApplicationContext(), "Error: Could not update rank because we couldn't retrieve Unit Test ID.", Toast.LENGTH_SHORT).show();
                     return;
             }
 
-            // update user rank on database
-            databaseReference.child("Users").child(authUserProfile.getUid()).child("rank").setValue(newRank)
-                    .addOnCompleteListener( taskUpdateRank -> {
-                        if (taskUpdateRank.isSuccessful() ){
-                            Toast.makeText(UnitTestResults.this, "Your rank updated to : " + String.valueOf(newRank), Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(UnitTestResults.this, "Error: Could not update your rank.", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+            // increase user's rank if less than newRank
+            userRankReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    try {
+                        Integer rank = snapshot.getValue(Integer.class);
+                        if (rank != null && rank < newRank){
+                            // update user rank on database
+                            databaseReference.child("Users").child(authUserProfile.getUid()).child("rank").setValue(newRank)
+                                    .addOnCompleteListener( taskUpdateRank -> {
+                                        if (taskUpdateRank.isSuccessful() ){
+                                            Toast.makeText(UnitTestResults.this, "Your rank updated to : " + String.valueOf(newRank), Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(UnitTestResults.this, "Error: Could not update your rank.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                    }
+                } catch (Exception e ){
+                        Toast.makeText(getApplicationContext(),"Error! Couldn't update rank", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+//
+//            // update user rank on database
+//            databaseReference.child("Users").child(authUserProfile.getUid()).child("rank").setValue(newRank)
+//                    .addOnCompleteListener( taskUpdateRank -> {
+//                        if (taskUpdateRank.isSuccessful() ){
+//                            Toast.makeText(UnitTestResults.this, "Your rank updated to : " + String.valueOf(newRank), Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            Toast.makeText(UnitTestResults.this, "Error: Could not update your rank.", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
 
 
         } else {
@@ -105,7 +140,7 @@ public class UnitTestResults extends AppCompatActivity {
 
     // TODO link too return to Lesson Screen
     public void onClickBackToLessons(View view){
-        Intent i = new Intent(this, TestLesson.class);
+        Intent i = new Intent(this, MainLessonsScreen.class);
         startActivity(i);
     }
 

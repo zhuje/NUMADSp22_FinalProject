@@ -1,9 +1,15 @@
-package edu.neu.madcourse.numadsp22_finalproject;
+package edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
+import edu.neu.madcourse.numadsp22_finalproject.R;
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.Quiz;
 
 public class Lesson1C_Content extends AppCompatActivity {
 
@@ -25,5 +31,12 @@ public class Lesson1C_Content extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lesson1CList);
         LessonContentAdapter lessonContentAdapter = new LessonContentAdapter(getApplicationContext(), lessonPoints);
         listView.setAdapter(lessonContentAdapter);
+    }
+
+    public void onClickGoToQuiz_1C(View view){
+        Intent i = new Intent(this, Quiz.class);
+        String quizId = "1B";
+        i.putExtra("QUIZ_ID",quizId);
+        startActivity(i);
     }
 }
