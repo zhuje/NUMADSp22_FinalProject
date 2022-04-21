@@ -93,7 +93,8 @@ public class ProfileActivity extends AppCompatActivity {
 
                 case R.id.message:
                     // change to messaging
-                    Intent intent1 = new Intent(ProfileActivity.this, MainActivity.class);
+                    Intent intent1 = new Intent(ProfileActivity.this,
+                            MainMessagingActivity.class);
                     startActivity(intent1);
                     break;
                 case R.id.home:
@@ -134,13 +135,15 @@ public class ProfileActivity extends AppCompatActivity {
                             // Log.d("inside getUserRank", myRank + " " + myRank.getClass());
                             tv_profile_rank.setText(myRank);
                         } else {
-                            Toast.makeText(ProfileActivity.this, "Couldn't fetch user Rank.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ProfileActivity.this,
+                                    "Couldn't fetch user Rank.", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(ProfileActivity.this, "Couldn't fetch user Rank.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileActivity.this,
+                                "Couldn't fetch user Rank.", Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -154,9 +157,13 @@ public class ProfileActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(ProfileActivity.this, "Password Successfully Updated", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this,
+                                        "Password Successfully Updated",
+                                        Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(ProfileActivity.this, "Password Failed to Update. Try Again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this,
+                                        "Password Failed to Update. Try Again",
+                                        Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -172,9 +179,14 @@ public class ProfileActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // TOOD UPDATE REALTIME DATABASE
 
-                                Toast.makeText(ProfileActivity.this, "Email Successfully Updated", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this,
+                                        "Email Successfully Updated",
+                                        Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(ProfileActivity.this, "Error! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this,
+                                        "Error! "
+                                                + Objects.requireNonNull(task.getException())
+                                                .getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

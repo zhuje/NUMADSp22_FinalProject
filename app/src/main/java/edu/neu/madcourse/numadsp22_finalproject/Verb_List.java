@@ -108,7 +108,8 @@ public class Verb_List extends AppCompatActivity {
 
 
                 case R.id.message:
-                    Intent intent1 = new Intent(Verb_List.this, MessageActivity.class);
+                    Intent intent1 = new Intent(Verb_List.this,
+                            MainMessagingActivity.class);
                     startActivity(intent1);
                     break;
                 case R.id.profile:

@@ -196,17 +196,20 @@ public class MainLessonsScreen extends AppCompatActivity {
 
 
                 case R.id.message:
-                    Intent intent1 = new Intent(MainLessonsScreen.this, MessageActivity.class);
+                    Intent intent1 = new Intent(MainLessonsScreen.this,
+                            MainMessagingActivity.class);
                     startActivity(intent1);
                     break;
                 case R.id.profile:
-                    Intent intent2 = new Intent(MainLessonsScreen.this, ProfileActivity.class);
+                    Intent intent2 = new Intent(MainLessonsScreen.this,
+                            ProfileActivity.class);
                     startActivity(intent2);
                     break;
                 case R.id.home:
                     break;
                 case R.id.verb:
-                    Intent intent3 = new Intent(MainLessonsScreen.this, Verb_List.class);
+                    Intent intent3 = new Intent(MainLessonsScreen.this,
+                            Verb_List.class);
                     startActivity(intent3);
                     break;
                 case R.id.logout:
