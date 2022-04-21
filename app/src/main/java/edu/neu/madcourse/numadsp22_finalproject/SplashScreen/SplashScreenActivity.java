@@ -9,6 +9,7 @@ import android.view.WindowManager;
 
 import edu.neu.madcourse.numadsp22_finalproject.LoginActivity;
 import edu.neu.madcourse.numadsp22_finalproject.R;
+import edu.neu.madcourse.numadsp22_finalproject.StartActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 2000;
@@ -17,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         new Handler().postDelayed(new Runnable() {

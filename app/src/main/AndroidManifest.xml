@@ -17,13 +17,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMADSp22_FinalProject">
-        <activity android:name=".StartActivity"
+        <activity
+            android:name=".SplashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".StartActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".quizzes.UnitTestResults"
@@ -66,15 +71,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity
-            android:name=".TestActivity"
-            android:exported="false" />
         <activity
             android:name=".MainLessonsScreen"
             android:exported="false" />
@@ -114,11 +111,7 @@
             android:name=".Lesson1D_Content"
             android:exported="false"
             />
-        <activity
-            android:name=".SplashScreen.SplashScreenActivity"
-            android:exported="true">
 
-        </activity>
         <service android:name=".Notifications.MyFirebaseIdService"
             android:enabled="true"
             android:exported="true">

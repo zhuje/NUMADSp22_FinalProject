@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         if (task1.isSuccessful()) {
                                             // Proceed to next activity after sign-in
                                             Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), MainLessonsScreen.class));
                                         } else {
                                             Toast.makeText(RegisterActivity.this, "Error!! " + Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                         }

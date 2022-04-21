@@ -92,8 +92,18 @@ public class ProfileActivity extends AppCompatActivity {
 
 
                 case R.id.message:
+                    // change to messaging
                     Intent intent1 = new Intent(ProfileActivity.this, MainActivity.class);
                     startActivity(intent1);
+                    break;
+                case R.id.home:
+                    Intent intent2 = new Intent(ProfileActivity.this,
+                            MainLessonsScreen.class);
+                    startActivity(intent2);
+                    break;
+                case R.id.verb:
+                    Intent intent3 = new Intent(ProfileActivity.this, Verb_List.class);
+                    startActivity(intent3);
                     break;
                 case R.id.profile:
                     break;
