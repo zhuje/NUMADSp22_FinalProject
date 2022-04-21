@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
 
                     //change this
-                    Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
+                    //Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
                 }
             }
 

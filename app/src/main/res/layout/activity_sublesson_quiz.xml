@@ -44,7 +44,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/character"
+                    android:src="@drawable/character_hv"
                     />
                 <TextView
                     android:id="@+id/tv_subquiz_question"

@@ -1,9 +1,12 @@
-package com.mymadapp.lessonsui;
+package edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ListView;
+
+import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
+import edu.neu.madcourse.numadsp22_finalproject.R;
 
 public class Lesson2A_Content extends AppCompatActivity {
     String lessonPoints[] = {"* Past tense indicates that actions were completed in the past.",

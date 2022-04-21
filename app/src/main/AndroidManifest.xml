@@ -90,16 +90,36 @@
             android:name=".SubLesson5"
             android:exported="false" />
         <activity
-            android:name=".Lesson1A_Content"
+            android:name=".Lesson1_Content.Lesson1A_Content"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Lesson1B_Content"
+            android:name=".Lesson1_Content.Lesson1B_Content"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Lesson1C_Content"
+            android:name=".Lesson1_Content.Lesson1C_Content"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Lesson1D_Content"
+            android:name=".Lesson1_Content.Lesson1D_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson2_Content.Lesson2A_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson2_Content.Lesson2B_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson2_Content.Lesson2C_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson2_Content.Lesson2D_Content"
+            android:screenOrientation="portrait"
             android:exported="false" />
 
         <service

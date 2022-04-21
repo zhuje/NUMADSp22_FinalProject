@@ -45,7 +45,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/character"
+                    android:src="@drawable/character_hv"
                     />
                 <TextView
                     android:layout_marginTop="10dp"
