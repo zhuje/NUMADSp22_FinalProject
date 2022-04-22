@@ -7,6 +7,10 @@
         <entry key="app/src/main/res/layout/activity_lesson1_bcontent.xml" value="0.2046875" />
         <entry key="app/src/main/res/layout/activity_lesson1_ccontent.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/activity_lesson1_dcontent.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_lesson2_acontent.xml" value="0.2653985507246377" />
+        <entry key="app/src/main/res/layout/activity_lesson2_bcontent.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_lesson2_ccontent.xml" value="0.1773049645390071" />
+        <entry key="app/src/main/res/layout/activity_lesson2_dcontent.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_login_sign_up.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />

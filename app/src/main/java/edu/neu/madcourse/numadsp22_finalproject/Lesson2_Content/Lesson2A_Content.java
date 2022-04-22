@@ -2,9 +2,12 @@ package edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1B_Content;
 import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 
@@ -27,4 +30,12 @@ public class Lesson2A_Content extends AppCompatActivity {
         LessonContentAdapter lessonContentAdapter = new LessonContentAdapter(getApplicationContext(), lessonPoints);
         listView.setAdapter(lessonContentAdapter);
     }
+
+    public void onClickGoToLesson_2B(View view){
+        Intent i = new Intent(this, Lesson2B_Content.class);
+        startActivity(i);
+    }
+
+
+
 }
