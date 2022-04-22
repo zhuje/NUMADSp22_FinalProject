@@ -183,7 +183,7 @@ public class MainMessagingActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 // change this code beacuse your app will crash
                 startActivity(new Intent(MainMessagingActivity.this,
-                        StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                        LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
         }
 

@@ -40,11 +40,11 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view"
-        android:layout_below="@id/bar_layout"
-        android:layout_above="@id/bottom"/>
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/bar_layout" />
 
     <RelativeLayout
         android:layout_width="match_parent"
