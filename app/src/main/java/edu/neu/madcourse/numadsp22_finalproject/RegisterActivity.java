@@ -86,16 +86,23 @@ public class RegisterActivity extends AppCompatActivity {
 
                             // add user to realtime database
                             // User newUser = new User(authUserProfile.getUid());
-                            String userid = authUserProfile.getUid();
-                            HashMap<String, Object> hashMap = new HashMap<>();
-                            hashMap.put("id", userid);
-                            hashMap.put("username", username);
-                            hashMap.put("imageURL", "default");
-                            hashMap.put("status", "offline");
-                            hashMap.put("rank", 0);
+//                            String userid = authUserProfile.getUid();
+//                            HashMap<String, Object> hashMap = new HashMap<>();
+//                            hashMap.put("id", userid);
+//                            hashMap.put("username", username);
+//                            hashMap.put("imageURL", "default");
+//                            hashMap.put("status", "offline");
+//                            hashMap.put("rank", 0);
+
+                            String uuid = authUserProfile.getUid();
+                            String imageURL = "default";
+                            String status = "offline";
+                            int rank = 0;
+
+                            User newUser = new User(username, imageURL, status, uuid, rank);
 
 
-                            databaseReference.child("Users").child(authUserProfile.getUid()).setValue(hashMap)
+                            databaseReference.child("Users").child(authUserProfile.getUid()).setValue(newUser)
                                     .addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
                                             // Proceed to next activity after sign-in
