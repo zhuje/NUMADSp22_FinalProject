@@ -89,6 +89,7 @@
         <activity
             android:name=".SubLesson5"
             android:exported="false" />
+
         <activity
             android:name=".Lesson1_Content.Lesson1A_Content"
             android:screenOrientation="portrait"
@@ -105,6 +106,7 @@
             android:name=".Lesson1_Content.Lesson1D_Content"
             android:screenOrientation="portrait"
             android:exported="false" />
+
         <activity
             android:name=".Lesson2_Content.Lesson2A_Content"
             android:screenOrientation="portrait"
@@ -121,6 +123,57 @@
             android:name=".Lesson2_Content.Lesson2D_Content"
             android:screenOrientation="portrait"
             android:exported="false" />
+
+        <activity
+            android:name=".Lesson3_Content.Lesson3A_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson3_Content.Lesson3B_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson3_Content.Lesson3B2_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson3_Content.Lesson3C_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson3_Content.Lesson3C2_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".Lesson4_Content.Lesson4A_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson4_Content.Lesson4A2_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson4_Content.Lesson4B_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name=".Lesson5_Content.Lesson5A_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson5_Content.Lesson5B_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Lesson5_Content.Lesson5C_Content"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+
+
 
         <service
             android:name=".Notifications.MyFirebaseIdService"

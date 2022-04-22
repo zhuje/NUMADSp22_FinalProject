@@ -1,5 +1,6 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -20,6 +21,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
+
+import edu.neu.madcourse.numadsp22_finalproject.Lesson4_Content.Lesson4A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson5_Content.Lesson5A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson5_Content.Lesson5B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson5_Content.Lesson5C_Content;
 
 public class SubLesson5 extends AppCompatActivity {
     private FirebaseUser authUserProfile;
@@ -53,21 +59,25 @@ public class SubLesson5 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
+                    startActivity(new Intent(SubLesson5.this, Lesson5A_Content.class));
                     if (userRank < 18) {
                         updateUserRank();
                     }
                 }
                 if (position == 1 && userRank >= 18){
+                    startActivity(new Intent(SubLesson5.this, Lesson5B_Content.class));
                     if (userRank < 19) {
                         updateUserRank();
                     }
                 }
                 if (position == 2 && userRank >=19) {
+                    startActivity(new Intent(SubLesson5.this, Lesson5C_Content.class));
                     if (userRank < 20) {
                         updateUserRank();
                     }
                 }
                 if (position == 3 && userRank >=20){
+                    // TODO add unit test
                     if (userRank < 21) {
                         updateUserRank();
                     }

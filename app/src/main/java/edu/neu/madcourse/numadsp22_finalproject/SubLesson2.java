@@ -84,6 +84,8 @@ public class SubLesson2 extends AppCompatActivity {
                     }
                 }
                 if (position == 4 && userRank >=9){
+                    // TODO start unit test
+
                     if (userRank < 10) {
                         updateUserRank();
                     }

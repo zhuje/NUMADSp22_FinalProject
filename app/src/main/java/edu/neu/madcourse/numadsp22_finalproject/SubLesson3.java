@@ -1,5 +1,6 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -20,6 +21,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
+
+import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson3_Content.Lesson3A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson3_Content.Lesson3B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson3_Content.Lesson3C_Content;
 
 public class SubLesson3 extends AppCompatActivity {
     private FirebaseUser authUserProfile;
@@ -52,21 +59,25 @@ public class SubLesson3 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
+                    startActivity(new Intent(SubLesson3.this, Lesson3A_Content.class));
                     if (userRank < 11) {
                         updateUserRank();
                     }
                 }
                 if (position == 1 && userRank >= 11){
+                    startActivity(new Intent(SubLesson3.this, Lesson3B_Content.class));
                     if (userRank < 12) {
                         updateUserRank();
                     }
                 }
                 if (position == 2 && userRank >=12) {
+                    startActivity(new Intent(SubLesson3.this, Lesson3C_Content.class));
                     if (userRank < 13) {
                         updateUserRank();
                     }
                 }
                 if (position == 3 && userRank >=13){
+                    // TODO start unit test
                     if (userRank < 14) {
                         updateUserRank();
                     }
