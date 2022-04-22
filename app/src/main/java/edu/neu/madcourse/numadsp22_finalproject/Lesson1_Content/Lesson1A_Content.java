@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
 import edu.neu.madcourse.numadsp22_finalproject.R;
+import edu.neu.madcourse.numadsp22_finalproject.SubLesson1;
 
 public class Lesson1A_Content extends AppCompatActivity {
     String lessonPoints[] = {"- Form that the verb will be if you look it up in the dictionary.",
@@ -38,7 +39,7 @@ public class Lesson1A_Content extends AppCompatActivity {
     }
 
     public void onClickGoToLesson_1B(View view){
-        Intent i = new Intent(this, Lesson1B_Content.class);
+        Intent i = new Intent(this, SubLesson1.class);
         startActivity(i);
     }
 

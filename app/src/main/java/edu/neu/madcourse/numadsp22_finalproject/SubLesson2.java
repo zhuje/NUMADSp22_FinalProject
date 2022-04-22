@@ -27,6 +27,7 @@ import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2A_Content
 import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2B_Content;
 import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2C_Content;
 import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2D_Content;
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.UnitTest;
 
 public class SubLesson2 extends AppCompatActivity {
     private FirebaseUser authUserProfile;
@@ -84,11 +85,13 @@ public class SubLesson2 extends AppCompatActivity {
                     }
                 }
                 if (position == 4 && userRank >=9){
-                    // TODO start unit test
+                    Intent i = new Intent(SubLesson2.this, UnitTest.class);
+                    i.putExtra(Util.KEY_UNIT_TEST_ID,"2");
+                    startActivity(i);
 
-                    if (userRank < 10) {
-                        updateUserRank();
-                    }
+//                    if (userRank < 10) {
+//                        updateUserRank();
+//                    }
                 }
 
             }

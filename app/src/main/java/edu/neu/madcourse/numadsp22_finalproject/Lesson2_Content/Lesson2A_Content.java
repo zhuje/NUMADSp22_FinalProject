@@ -10,6 +10,7 @@ import android.widget.ListView;
 import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1B_Content;
 import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
 import edu.neu.madcourse.numadsp22_finalproject.R;
+import edu.neu.madcourse.numadsp22_finalproject.SubLesson2;
 
 public class Lesson2A_Content extends AppCompatActivity {
     String lessonPoints[] = {"* Past tense indicates that actions were completed in the past.",
@@ -32,7 +33,7 @@ public class Lesson2A_Content extends AppCompatActivity {
     }
 
     public void onClickGoToLesson_2B(View view){
-        Intent i = new Intent(this, Lesson2B_Content.class);
+        Intent i = new Intent(this, SubLesson2.class);
         startActivity(i);
     }
 

@@ -201,7 +201,6 @@ public class Quiz extends AppCompatActivity {
 
     public void onClickGoToCurrentLesson(View view) {
         // DB needs to hold name of next lesson in each quiz
-
         Intent intent = new Intent(this, nextActivity);
         startActivity(intent);
     }
