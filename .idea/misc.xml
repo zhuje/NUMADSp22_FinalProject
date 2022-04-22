@@ -43,6 +43,7 @@
         <entry key="app/src/main/res/layout/activity_unit_test.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_unit_test_results.xml" value="0.1037037037037037" />
         <entry key="app/src/main/res/layout/activity_verb_list.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/bar_layout.xml" value="0.2734375" />
         <entry key="app/src/main/res/layout/lesson_list_txtview_item.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.21739130434782608" />
         <entry key="app/src/main/res/layout/sub_lessons_list_item.xml" value="0.21739130434782608" />

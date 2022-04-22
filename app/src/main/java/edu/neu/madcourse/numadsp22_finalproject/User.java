@@ -10,16 +10,17 @@ public class User {
 
     public User(){}
 
-    public User(String uuid){
-        this.uuid = uuid;
-        this.rank = 0;
-    }
+//    public User(String uuid){
+//        this.uuid = uuid;
+//        this.rank = 0;
+//    }
 
-    public User(String username, String imageURL, String status, String search) {
+    public User(String username, String imageURL, String status, String uuid, int rank) {
         this.username = username;
         this.imageURL = imageURL;
         this.status = status;
-        this.search = search;
+        this.uuid = uuid;
+        this.rank = rank;
     }
 
 

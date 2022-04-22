@@ -85,13 +85,15 @@ public class RegisterActivity extends AppCompatActivity {
                                     .addOnCompleteListener(task12 -> Log.d("PRUNE", "User profile updated."));
 
                             // add user to realtime database
-                            User newUser = new User(authUserProfile.getUid());
+                            // User newUser = new User(authUserProfile.getUid());
                             String userid = authUserProfile.getUid();
-                            HashMap<String, String> hashMap = new HashMap<>();
+                            HashMap<String, Object> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "offline");
+                            hashMap.put("rank", 0);
+
 
                             databaseReference.child("Users").child(authUserProfile.getUid()).setValue(hashMap)
                                     .addOnCompleteListener(task1 -> {
