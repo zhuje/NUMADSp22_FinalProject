@@ -21,12 +21,12 @@ public class Lesson3C_Content extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openLesson3c2();
+                openLesson3c2(view);
             }
         });
     }
 
-    public void openLesson3c2(){
+    public void openLesson3c2(View view){
         Intent intent = new Intent(this, Lesson3C2_Content.class);
         startActivity(intent);
     }
