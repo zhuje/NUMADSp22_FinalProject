@@ -110,26 +110,46 @@ public class Verb_List extends AppCompatActivity {
                 case R.id.message:
                     Intent intent1 = new Intent(Verb_List.this,
                             MainMessagingActivity.class);
+                    // need to clear backstack
+                    // https://stackoverflow.com/questions/5794506/android-clear-the-back-stack
+                    intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent1);
+                    Verb_List.this.finish();
                     break;
                 case R.id.profile:
-                    Intent intent2 = new Intent(Verb_List.this, ProfileActivity.class);
+                    Intent intent2 = new Intent(Verb_List.this,
+                            ProfileActivity.class);
+                    // need to clear backstack
+                    // https://stackoverflow.com/questions/5794506/android-clear-the-back-stack
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent2);
+                    Verb_List.this.finish();
                     break;
                 case R.id.home:
                     Intent intent3 = new Intent(Verb_List.this,
                             MainLessonsScreen.class);
                     startActivity(intent3);
+                    // need to clear backstack
+                    // https://stackoverflow.com/questions/5794506/android-clear-the-back-stack
+                    intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent3);
+                    Verb_List.this.finish();
                     break;
                 case R.id.verb:
                     break;
                 case R.id.logout:
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    finish();
+                    Intent intent4 = new Intent(getApplicationContext(), LoginActivity.class);
+                    // need to clear backstack
+                    // https://stackoverflow.com/questions/5794506/android-clear-the-back-stack
+                    intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent4);
+                    Verb_List.this.finish();
                     break;
-
-
             }
 
             return true;
