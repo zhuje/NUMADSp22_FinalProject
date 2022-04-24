@@ -15,6 +15,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -84,13 +85,29 @@ public class RegisterActivity extends AppCompatActivity {
                                     .addOnCompleteListener(task12 -> Log.d("PRUNE", "User profile updated."));
 
                             // add user to realtime database
-                            User newUser = new User(authUserProfile.getUid());
+                            // User newUser = new User(authUserProfile.getUid());
+//                            String userid = authUserProfile.getUid();
+//                            HashMap<String, Object> hashMap = new HashMap<>();
+//                            hashMap.put("id", userid);
+//                            hashMap.put("username", username);
+//                            hashMap.put("imageURL", "default");
+//                            hashMap.put("status", "offline");
+//                            hashMap.put("rank", 0);
+
+                            String uuid = authUserProfile.getUid();
+                            String imageURL = "default";
+                            String status = "offline";
+                            int rank = 0;
+
+                            User newUser = new User(username, imageURL, status, uuid, rank);
+
+
                             databaseReference.child("Users").child(authUserProfile.getUid()).setValue(newUser)
                                     .addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
                                             // Proceed to next activity after sign-in
                                             Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), TestActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), MainLessonsScreen.class));
                                         } else {
                                             Toast.makeText(RegisterActivity.this, "Error!! " + Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                         }

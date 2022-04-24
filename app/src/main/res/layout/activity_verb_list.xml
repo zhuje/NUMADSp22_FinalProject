@@ -15,4 +15,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNav"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu = "@menu/menu"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

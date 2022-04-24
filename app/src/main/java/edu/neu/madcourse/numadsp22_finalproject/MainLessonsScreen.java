@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,8 +36,9 @@ public class MainLessonsScreen extends AppCompatActivity {
     final int LOCK = R.drawable.redlock2;
     final int UNLOCK = R.drawable.greenlock2;
     private CustomBaseAdapter adapter;
+    private BottomNavigationView bottomNavigationView;
 
-    String[] lessonList = {"Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5"};
+    String[] lessonList = {"Lesson 1 \nPresent Affirmative", "Lesson 2 \nPast Affirmative", "Lesson 3 \nNegative Present \nand Past", "Lesson 4 \nTe Form", "Lesson 5 \nPotential Present \nAffirmative"};
     int[] lockList = {UNLOCK, LOCK, LOCK, LOCK, LOCK};
 
     ListView listView;
@@ -48,6 +50,10 @@ public class MainLessonsScreen extends AppCompatActivity {
         Log.d("Tag", "Lesson 1");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_lessons_screen);
+        //for bottom navigation
+        bottomNavigationView = findViewById(R.id.bottomNav);
+
+        bottomNavigationView.setOnItemSelectedListener(bottomNavmethod);
         // TODO -- get user rank from db
         // set as nominal value for error checking
         Log.d("Tag", "Lesson 2");
@@ -179,5 +185,43 @@ public class MainLessonsScreen extends AppCompatActivity {
         rankDatabaseReference.removeEventListener(lockListener);
         finish();
         super.onBackPressed();
+    }
+
+    private BottomNavigationView.OnItemSelectedListener bottomNavmethod;
+
+    {
+        bottomNavmethod = item -> {
+
+            switch (item.getItemId()) {
+
+
+                case R.id.message:
+                    Intent intent1 = new Intent(MainLessonsScreen.this,
+                            MainMessagingActivity.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.profile:
+                    Intent intent2 = new Intent(MainLessonsScreen.this,
+                            ProfileActivity.class);
+                    startActivity(intent2);
+                    break;
+                case R.id.home:
+                    break;
+                case R.id.verb:
+                    Intent intent3 = new Intent(MainLessonsScreen.this,
+                            Verb_List.class);
+                    startActivity(intent3);
+                    break;
+                case R.id.logout:
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                    break;
+
+
+            }
+
+            return true;
+        };
     }
 }

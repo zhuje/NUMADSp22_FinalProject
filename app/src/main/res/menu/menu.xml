@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+        android:icon ="@drawable/ic_leave"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/home"
+        android:title="Lesson"
+        android:icon="@drawable/ic_lesson"/>
+
+    <item
+        android:id="@+id/message"
+        android:title="Messages"
+        android:icon="@drawable/ic_message"/>
+
+    <item
+        android:id="@+id/verb"
+        android:title="Verbs"
+        android:icon="@drawable/ic_yomu"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"/>
+
+
+
+</menu>

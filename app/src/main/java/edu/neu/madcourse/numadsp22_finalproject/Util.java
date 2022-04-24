@@ -1,14 +1,19 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
+import android.content.Context;
 import android.util.Log;
 import android.util.Patterns;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Util {
     public static final String EMAIL = "Email";
     public static final String USERNAME = "Username";
     public static final String PASSWORD = "Password";
+    public static final String KEY_NUM_CORRECT = "KEY_NUM_CORRECT";
+    public static final String KEY_UNIT_TEST_ID = "UNIT_TEST_ID";
+
 
     /**
      * Helper function to onClickRegister.

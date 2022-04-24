@@ -2,9 +2,13 @@ package edu.neu.madcourse.numadsp22_finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -13,11 +17,16 @@ public class Verb_List extends AppCompatActivity {
     private ArrayList<Verb> verbList = new ArrayList<>();
     private ListView viewList;
     private VerbViewAdaptor adaptor;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verb_list);
+        //for bottom navigation
+        bottomNavigationView = findViewById(R.id.bottomNav);
+
+        bottomNavigationView.setOnItemSelectedListener(bottomNavmethod);
         // fill in list with all needed verbs
         int suwaruPicture = R.drawable.suwaru;
         Verb suwaru = new Verb("座る", "すわる", "suwaru",
@@ -90,4 +99,41 @@ public class Verb_List extends AppCompatActivity {
         viewList.setAdapter(adaptor);
         Log.d("Tag", "Part 5");
     }
+    private BottomNavigationView.OnItemSelectedListener bottomNavmethod;
+
+    {
+        bottomNavmethod = item -> {
+
+            switch (item.getItemId()) {
+
+
+                case R.id.message:
+                    Intent intent1 = new Intent(Verb_List.this,
+                            MainMessagingActivity.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.profile:
+                    Intent intent2 = new Intent(Verb_List.this, ProfileActivity.class);
+                    startActivity(intent2);
+                    break;
+                case R.id.home:
+                    Intent intent3 = new Intent(Verb_List.this,
+                            MainLessonsScreen.class);
+                    startActivity(intent3);
+                    break;
+                case R.id.verb:
+                    break;
+                case R.id.logout:
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                    break;
+
+
+            }
+
+            return true;
+        };
+    }
+
 }

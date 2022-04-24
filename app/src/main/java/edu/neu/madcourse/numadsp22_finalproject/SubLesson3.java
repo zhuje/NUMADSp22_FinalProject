@@ -22,6 +22,13 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
+import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson2_Content.Lesson2B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson3_Content.Lesson3A_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson3_Content.Lesson3B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson3_Content.Lesson3C_Content;
+import edu.neu.madcourse.numadsp22_finalproject.quizzes.UnitTest;
+
 public class SubLesson3 extends AppCompatActivity {
     private FirebaseUser authUserProfile;
     private String userUUID;
@@ -71,9 +78,13 @@ public class SubLesson3 extends AppCompatActivity {
                     }
                 }
                 if (position == 3 && userRank >=13){
-                    if (userRank < 14) {
-                        updateUserRank();
-                    }
+                    // TODO start unit test
+                    Intent i = new Intent(SubLesson3.this, UnitTest.class);
+                    i.putExtra(Util.KEY_UNIT_TEST_ID,"3");
+                    startActivity(i);
+//                    if (userRank < 14) {
+//                        updateUserRank();
+//                    }
                 }
 
             }

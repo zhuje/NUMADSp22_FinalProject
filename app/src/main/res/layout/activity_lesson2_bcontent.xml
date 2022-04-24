@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".Lesson2A_Content">
+    tools:context=".Lesson2_Content.Lesson2B_Content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -242,6 +242,7 @@
 
         <Button
             android:id="@+id/button2"
+            android:onClick="onClickGoToQuiz_2B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
