@@ -19,7 +19,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/character" />
+                android:src="@drawable/character_hv" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

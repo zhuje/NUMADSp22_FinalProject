@@ -3,19 +3,45 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_lesson1_bcontent.xml" value="0.1" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_login.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_login_sign_up.xml" value="0.1796875" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_main_lessons_screen.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.24365942028985507" />
-        <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_sub_lesson1.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_sub_lesson2.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_test.xml" value="0.25271739130434784" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_verb_list.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/sub_lessons_list_item.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/verb_card.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_lesson1_acontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson1_bcontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson1_ccontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson1_dcontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson2_acontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson2_bcontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson2_ccontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson2_dcontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson3_acontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson3_b2_content.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson3_bcontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson3_c2_content.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson3_ccontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson4_a2_content.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson4_acontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson4_bcontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson5_acontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson5_bcontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson5_ccontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/activity_login_sign_up.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main_lessons_screen.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.2542955326460481" />
+        <entry key="app/src/main/res/layout/activity_test.xml" value="0.3613210441563727" />
+        <entry key="app/src/main/res/layout/lesson_list_txtview_item.xml" value="0.18659420289855072" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.16354166666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1390625" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1390625" />
       </map>
     </option>
   </component>

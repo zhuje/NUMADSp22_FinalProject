@@ -30,7 +30,7 @@
             android:id="@+id/textView110"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:padding="10sp"
             android:text="猫は魚を持っている。 (neko wa sakana wo motte iru)."
             android:textColor="@color/black"

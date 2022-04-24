@@ -40,45 +40,38 @@
             android:exported="false" />
         <activity
             android:name=".SubLesson1"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".SubLesson2"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".SubLesson3"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".SubLesson4"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".SubLesson5"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".Lesson1A_Content"
-            android:exported="false"
-            />
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".Lesson1B_Content"
-            android:exported="false"
-            />
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".Lesson1C_Content"
-            android:exported="false"
-            />
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".Lesson1D_Content"
-            android:exported="false"
-            />
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".SplashScreen.SplashScreenActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

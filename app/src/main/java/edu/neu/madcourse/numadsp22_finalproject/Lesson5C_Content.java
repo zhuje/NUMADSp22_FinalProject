@@ -1,8 +1,8 @@
-package com.mymadapp.lessonsui;
-
-import androidx.appcompat.app.AppCompatActivity;
+package edu.neu.madcourse.numadsp22_finalproject;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Lesson5C_Content extends AppCompatActivity {
 

@@ -16,6 +16,7 @@
             android:id="@+id/textView39"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:padding="10sp"
             android:text="The same rule applies as in the ru and irregular verb with changing the present negative tense to the past negative tense - just simply take the い i ending and substitute it with かった -katta."
             android:textColor="@color/black"
@@ -56,7 +57,6 @@
                     android:id="@+id/textView84"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="Translation"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -66,7 +66,6 @@
                     android:id="@+id/textView83"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="Present Affirmative"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -76,7 +75,6 @@
                     android:id="@+id/textView82"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="Present Negative"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -91,7 +89,6 @@
                     android:id="@+id/textView87"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To think"
                     android:textColor="@color/black" />
 
@@ -99,7 +96,6 @@
                     android:id="@+id/textView86"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="思わない"
                     android:textColor="@color/black" />
 
@@ -107,7 +103,6 @@
                     android:id="@+id/textView85"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="思わなかった omowanakatta  "
                     android:textColor="@color/black" />
             </TableRow>
@@ -120,7 +115,6 @@
                     android:id="@+id/textView90"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To have"
                     android:textColor="@color/black" />
 
@@ -128,7 +122,6 @@
                     android:id="@+id/textView89"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="持たない motanai"
                     android:textColor="@color/black" />
 
@@ -136,7 +129,6 @@
                     android:id="@+id/textView88"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="持たなかった motanakatta"
                     android:textColor="@color/black" />
             </TableRow>
@@ -149,7 +141,6 @@
                     android:id="@+id/textView93"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To sit"
                     android:textColor="@color/black" />
 
@@ -157,7 +148,6 @@
                     android:id="@+id/textView92"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="座らない suwaranai"
                     android:textColor="@color/black" />
 
@@ -165,7 +155,6 @@
                     android:id="@+id/textView91"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="座らなかった suwaranakatta"
                     android:textColor="@color/black" />
             </TableRow>
@@ -178,7 +167,6 @@
                     android:id="@+id/textView96"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To die"
                     android:textColor="@color/black" />
 
@@ -186,7 +174,6 @@
                     android:id="@+id/textView95"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="死なない shinanai "
                     android:textColor="@color/black" />
 
@@ -194,7 +181,6 @@
                     android:id="@+id/textView94"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="死ななかった shinanakatta"
                     android:textColor="@color/black" />
             </TableRow>
@@ -207,7 +193,6 @@
                     android:id="@+id/textView99"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To fly"
                     android:textColor="@color/black" />
 
@@ -215,7 +200,6 @@
                     android:id="@+id/textView98"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="飛ばない tobanai"
                     android:textColor="@color/black" />
 
@@ -223,7 +207,6 @@
                     android:id="@+id/textView97"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="飛ばなかった tobanakatta"
                     android:textColor="@color/black" />
             </TableRow>
@@ -236,7 +219,6 @@
                     android:id="@+id/textView103"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To read"
                     android:textColor="@color/black" />
 
@@ -244,7 +226,6 @@
                     android:id="@+id/textView102"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="読まない yomanai"
                     android:textColor="@color/black" />
 
@@ -252,7 +233,6 @@
                     android:id="@+id/textView101"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="読まなかった yomanakatta"
                     android:textColor="@color/black" />
 
@@ -266,7 +246,6 @@
                     android:id="@+id/textView106"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To listen"
                     android:textColor="@color/black" />
 
@@ -274,7 +253,6 @@
                     android:id="@+id/textView105"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="聞かない kikanai"
                     android:textColor="@color/black" />
 
@@ -282,7 +260,6 @@
                     android:id="@+id/textView104"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="聞かなかった kikanakatta"
                     android:textColor="@color/black" />
             </TableRow>
@@ -295,7 +272,6 @@
                     android:id="@+id/textView109"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="To speak"
                     android:textColor="@color/black" />
 
@@ -303,7 +279,6 @@
                     android:id="@+id/textView108"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="話さない hanasanai"
                     android:textColor="@color/black" />
 
@@ -311,7 +286,6 @@
                     android:id="@+id/textView107"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
                     android:text="話さなかった hanasanakatta"
                     android:textColor="@color/black" />
             </TableRow>

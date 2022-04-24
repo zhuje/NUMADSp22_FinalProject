@@ -1,5 +1,6 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -53,23 +54,27 @@ public class SubLesson2 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
+                    startActivity(new Intent(SubLesson2.this, Lesson2A_Content.class));
 
                     if (userRank < 6) {
                         updateUserRank();
                     }
                 }
                 if (position == 1 && userRank >= 6){
+                    startActivity(new Intent(SubLesson2.this, Lesson2B_Content.class));
 
                     if (userRank < 7) {
                         updateUserRank();
                     }
                 }
                 if (position == 2 && userRank >=7) {
+                    startActivity(new Intent(SubLesson2.this, Lesson2C_Content.class));
                     if (userRank < 8) {
                         updateUserRank();
                     }
                 }
                 if (position == 3 && userRank >=8){
+                    startActivity(new Intent(SubLesson2.this, Lesson2D_Content.class));
                     if (userRank < 9) {
                         updateUserRank();
                     }

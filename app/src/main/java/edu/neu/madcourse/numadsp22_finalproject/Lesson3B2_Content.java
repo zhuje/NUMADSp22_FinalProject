@@ -1,11 +1,8 @@
-package com.mymadapp.lessonsui;
+package edu.neu.madcourse.numadsp22_finalproject;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 public class Lesson3B2_Content extends AppCompatActivity {
 
