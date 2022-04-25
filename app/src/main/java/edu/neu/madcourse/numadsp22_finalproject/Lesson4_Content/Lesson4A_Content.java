@@ -17,7 +17,7 @@ public class Lesson4A_Content extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson4_acontent);
 
-        button1 = (Button) findViewById(R.id.button4);
+        button1 = (Button) findViewById(R.id.button);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
