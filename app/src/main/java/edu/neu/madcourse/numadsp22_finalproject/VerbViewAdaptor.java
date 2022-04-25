@@ -1,5 +1,6 @@
 package edu.neu.madcourse.numadsp22_finalproject;
 
+import android.Manifest;
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
@@ -11,6 +12,10 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,6 +30,8 @@ public class VerbViewAdaptor extends BaseAdapter {
         this.verbList = array;
         this.layout = LayoutInflater.from(applicationContext);
     }
+
+
 
     @Override
     public int getCount() {

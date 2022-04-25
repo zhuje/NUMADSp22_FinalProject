@@ -196,6 +196,7 @@ public class MainLessonsScreen extends AppCompatActivity {
 
 
                 case R.id.message:
+                    rankDatabaseReference.removeEventListener(lockListener);
                     Intent intent1 = new Intent(MainLessonsScreen.this,
                             MainMessagingActivity.class);
                     // need to clear backstack
@@ -206,6 +207,7 @@ public class MainLessonsScreen extends AppCompatActivity {
                     MainLessonsScreen.this.finish();
                     break;
                 case R.id.profile:
+                    rankDatabaseReference.removeEventListener(lockListener);
                     Intent intent2 = new Intent(MainLessonsScreen.this,
                             ProfileActivity.class);
                     // need to clear backstack
@@ -219,6 +221,7 @@ public class MainLessonsScreen extends AppCompatActivity {
                     // should do nothing
                     break;
                 case R.id.verb:
+                    rankDatabaseReference.removeEventListener(lockListener);
                     Intent intent3 = new Intent(MainLessonsScreen.this,
                             Verb_List.class);
                     startActivity(intent3);
@@ -230,6 +233,7 @@ public class MainLessonsScreen extends AppCompatActivity {
                     MainLessonsScreen.this.finish();
                     break;
                 case R.id.logout:
+                    rankDatabaseReference.removeEventListener(lockListener);
                     FirebaseAuth.getInstance().signOut();
                     Intent intent4 = new Intent(getApplicationContext(), LoginActivity.class);
                     // need to clear backstack

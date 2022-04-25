@@ -6,4 +6,10 @@
     <string name="character_picture">Character Picture</string>
     <string name="play_audio">Play Audio</string>
     <string name="slash">/</string>
+    <string name="try_out">Try</string>
+    <string name="deny_reason">This feature cannot be used as it requires audio recording permission.</string>
+    <string name="okay_option">Okay</string>
+    <string name="try_out_speaking">Try Out Speaking</string>
+    <string name="audio_image">Audio Image</string>
+    <string name="try_out_text">Listen to a native speaker, and test your pronunciation!</string>
 </resources>
