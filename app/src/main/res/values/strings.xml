@@ -12,4 +12,8 @@
     <string name="try_out_speaking">Try Out Speaking</string>
     <string name="audio_image">Audio Image</string>
     <string name="try_out_text">Listen to a native speaker, and test your pronunciation!</string>
+    <string name="record_your_voice">Record Your Voice</string>
+    <string name="listen_to_audio">Listen to Audio</string>
+    <string name="pause_recording">Pause Recording</string>
+    <string name="play_recording">Play Recording</string>
 </resources>
