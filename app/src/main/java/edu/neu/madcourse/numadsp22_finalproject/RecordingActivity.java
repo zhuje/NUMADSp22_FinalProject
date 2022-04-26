@@ -7,11 +7,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 // This activity allows the user to try recording their voice to see how it compares to
 // the given audio recording of the Japanese word
 public class RecordingActivity extends AppCompatActivity {
+
+    private int characterPicture;
+    private String audioURL;
+    private String wordInfo;
+    private Button nativeAudioButton;
+
 
     /**
      * this is for requesting permissions from user
@@ -29,7 +41,7 @@ public class RecordingActivity extends AppCompatActivity {
                                 false);
                         if ((audioRecording != null && audioRecording) && (writeStorage
                                 != null && writeStorage)) {
-                            // permission granted for both things
+                            // permission granted for both things, can go ahead
                         } else {
                             // need to explain feature is unavailable due to no permission
                             showDenyReason();
@@ -41,6 +53,39 @@ public class RecordingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recording);
+        // get information from intent
+        getWordInformation();
+        // now fill that into page
+        TextView wordText = findViewById(R.id.audio_text_word);
+        wordText.setText(wordInfo);
+        ImageView character = findViewById(R.id.audio_picture);
+        character.setImageResource(characterPicture);
+        // button for playing audio from native speaker
+        nativeAudioButton = findViewById(R.id.listenButton);
+        nativeAudioButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                // play audio from native speaker
+
+            }
+        });
+    }
+
+    /**
+     * This is for getting the information passed alongside the intent
+     */
+    private void getWordInformation() {
+        Intent intent = getIntent();
+        // check that it is not null
+        if (intent != null) {
+            characterPicture = Integer.parseInt(intent.getStringExtra("picture"));
+            audioURL = intent.getStringExtra("urlString");
+            wordInfo = intent.getStringExtra("wordInfo");
+        } else {
+            // alert that intent is null
+            Toast.makeText(this, "Intent is null", Toast.LENGTH_LONG).show();
+        }
     }
 
     /**

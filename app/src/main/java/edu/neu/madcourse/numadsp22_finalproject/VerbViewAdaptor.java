@@ -2,8 +2,10 @@ package edu.neu.madcourse.numadsp22_finalproject;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,11 +26,13 @@ import java.util.ArrayList;
 public class VerbViewAdaptor extends BaseAdapter {
     private ArrayList<Verb> verbList;
     private LayoutInflater layout;
+    private Context applicationContext;
 
     // constructor for adaptor
     public VerbViewAdaptor(ArrayList<Verb> array, Context applicationContext){
         this.verbList = array;
         this.layout = LayoutInflater.from(applicationContext);
+        this.applicationContext = applicationContext;
     }
 
 
@@ -111,6 +115,30 @@ public class VerbViewAdaptor extends BaseAdapter {
                 Thread audioThread = new Thread(audioRunnable);
                 // run it
                 audioThread.start();
+            }
+        });
+        // now code to open activity for recording audio!
+        Button tryRecordingButton = view.findViewById(R.id.recordAudioButton);
+        // set it to open a new activity
+        tryRecordingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // make new intent to start recording activity
+                Intent intent = new Intent(applicationContext, RecordingActivity.class);
+                Bundle extraContent = new Bundle();
+                // add in any extras needed: first is url of string
+                extraContent.putString("urlString", verbList.get(i).getAudioURL());
+                // second is picture
+                extraContent.putString("picture", "" + verbList.get(i).getCharacterPicture());
+                // third is word and for this we concatenate
+                String wordInfo = "" + verbList.get(i).getVerbKanji() + " / "
+                        + verbList.get(i).getVerbRoman();
+                // add in information
+                extraContent.putString("wordInfo", wordInfo);
+                // put the extras in
+                intent.putExtras(extraContent);
+                // start activity
+                applicationContext.startActivity(intent);
             }
         });
         return view;

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.icu.text.AlphabeticIndex;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -158,5 +159,6 @@ public class Verb_List extends AppCompatActivity {
             return true;
         };
     }
+
 
 }

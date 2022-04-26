@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Verb_List">
+
     <ListView
         android:id="@+id/verbList"
         android:layout_width="match_parent"
@@ -13,6 +14,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="0dp"
+        android:layout_marginBottom="?attr/actionBarSize"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
