@@ -4,10 +4,12 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -27,8 +29,7 @@ public class RecordingActivity extends AppCompatActivity {
     private int characterPicture;
     private String audioURL;
     private String wordInfo;
-    private Button nativeAudioButton;
-
+    private String wordFile;
 
     /**
      * this is for requesting permissions from user
@@ -66,9 +67,8 @@ public class RecordingActivity extends AppCompatActivity {
         ImageView character = findViewById(R.id.audio_picture);
         character.setImageResource(characterPicture);
         // button for playing audio from native speaker
-        nativeAudioButton = findViewById(R.id.listenButton);
+        Button nativeAudioButton = findViewById(R.id.listenButton);
         nativeAudioButton.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 // play audio from native speaker
@@ -109,6 +109,55 @@ public class RecordingActivity extends AppCompatActivity {
                 audioThread.start();
             }
         });
+        Button recordingButton = findViewById(R.id.recordingButton);
+        recordingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // check that there is a mic on the system
+                if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE)) {
+                    // we can record
+                    // need to check for permissions for recording already being available
+                    if (ContextCompat.checkSelfPermission(RecordingActivity.this,
+                            Manifest.permission.RECORD_AUDIO )
+                            == PackageManager.PERMISSION_GRANTED &&
+                            ContextCompat.checkSelfPermission(RecordingActivity.this,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                                    == PackageManager.PERMISSION_GRANTED) {
+                        // in this case permission is granted and can record
+                        recordAudio();
+                    } else if (shouldShowRequestPermissionRationale(
+                            Manifest.permission.RECORD_AUDIO)
+                            || shouldShowRequestPermissionRationale(
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                        // need to tell reason why we need to request permission
+                        // this is if user has denied permission before
+                        showAudioReason();
+                    } else {
+                        // need to ask for permission to record if this is first time
+                        audioPermissionLauncher.launch(new String[]
+                                {Manifest.permission.RECORD_AUDIO,
+                                        Manifest.permission.WRITE_EXTERNAL_STORAGE});
+                    }
+                } else {
+                    // make alert dialog
+                    AlertDialog.Builder giveReason =
+                            new AlertDialog.Builder(RecordingActivity.this);
+                    // give reason permission is needed for this app
+                    giveReason.setTitle("No microphone is available to use this feature.");
+                    // now give button for user to acknowledge
+                    giveReason.setPositiveButton(R.string.okay_option, null);
+                    giveReason.show();
+                }
+            }
+        });
+    }
+
+    /**
+     * This class is used for recording audio
+     */
+    private void recordAudio() {
+        // set up the file to save it
+
     }
 
     /**
@@ -121,6 +170,7 @@ public class RecordingActivity extends AppCompatActivity {
             characterPicture = Integer.parseInt(intent.getStringExtra("picture"));
             audioURL = intent.getStringExtra("urlString");
             wordInfo = intent.getStringExtra("wordInfo");
+            wordFile = intent.getStringExtra("wordFile");
         } else {
             // alert that intent is null
             Toast.makeText(this, "Intent is null", Toast.LENGTH_LONG).show();

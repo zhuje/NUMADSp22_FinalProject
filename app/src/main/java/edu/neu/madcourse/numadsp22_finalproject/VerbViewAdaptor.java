@@ -135,6 +135,8 @@ public class VerbViewAdaptor extends BaseAdapter {
                         + verbList.get(i).getVerbRoman();
                 // add in information
                 extraContent.putString("wordInfo", wordInfo);
+                // add in title
+                extraContent.putString("wordFile", verbList.get(i).getVerbRoman() + ".3gp");
                 // put the extras in
                 intent.putExtras(extraContent);
                 // start activity
