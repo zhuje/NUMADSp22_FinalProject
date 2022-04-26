@@ -8,12 +8,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 // This activity allows the user to try recording their voice to see how it compares to
 // the given audio recording of the Japanese word
@@ -67,7 +72,41 @@ public class RecordingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // play audio from native speaker
+                // make a thread to start the audio
+                Runnable audioRunnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("Tag", "thread part 1");
+                        try {
+                            Log.d("Tag", "thread part 2");
+                            // using android studio developers documentation on mediaPlayer
+                            // for the below code snippet regarding streaming via HTTP
+                            Log.d("Tag", "thread part 3");
+                            MediaPlayer audioPlayer = new MediaPlayer();
+                            Log.d("Tag", "thread part 4");
+                            audioPlayer.setAudioAttributes(
+                                    new AudioAttributes.Builder()
+                                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                                            .setUsage(AudioAttributes.USAGE_MEDIA)
+                                            .build()
+                            );
+                            Log.d("Tag", "thread part 5");
+                            audioPlayer.setDataSource(audioURL);
+                            Log.d("Tag", "thread part 6");
+                            audioPlayer.prepare();
+                            Log.d("Tag", "thread part 7");
+                            audioPlayer.start();
+                            Log.d("Tag", "thread part 8");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
+                    }
+                };
+                // now make thread and run it!
+                Thread audioThread = new Thread(audioRunnable);
+                // run it
+                audioThread.start();
             }
         });
     }
