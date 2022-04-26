@@ -35,7 +35,7 @@ public class Lesson1C_Content extends AppCompatActivity {
 
     public void onClickGoToQuiz_1C(View view){
         Intent i = new Intent(this, Quiz.class);
-        String quizId = "1B";
+        String quizId = "1C";
         i.putExtra("QUIZ_ID",quizId);
         startActivity(i);
     }

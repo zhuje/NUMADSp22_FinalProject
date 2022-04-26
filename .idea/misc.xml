@@ -13,7 +13,7 @@
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/activity_verb_list.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Hannah/AndroidStudioProjects/NUMADSp22_FinalProject/app/src/main/res/layout/verb_card.xml" value="0.5" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.17135416666666667" />
-        <entry key="app/src/main/res/layout/activity_lesson1_acontent.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_lesson1_acontent.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_lesson1_bcontent.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lesson1_ccontent.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lesson1_dcontent.xml" value="0.25" />
@@ -27,9 +27,9 @@
         <entry key="app/src/main/res/layout/activity_lesson3_c2_content.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_lesson3_ccontent.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lesson4_a2_content.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_lesson4_acontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson4_acontent.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lesson4_bcontent.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_lesson5_acontent.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/activity_lesson5_acontent.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_lesson5_bcontent.xml" value="0.159375" />
         <entry key="app/src/main/res/layout/activity_lesson5_ccontent.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
