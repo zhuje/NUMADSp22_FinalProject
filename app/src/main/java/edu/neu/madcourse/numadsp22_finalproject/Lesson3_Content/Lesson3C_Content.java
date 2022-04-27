@@ -29,5 +29,6 @@ public class Lesson3C_Content extends AppCompatActivity {
     public void openLesson3c2(View view){
         Intent intent = new Intent(this, Lesson3C2_Content.class);
         startActivity(intent);
+        Lesson3C_Content.this.finish();
     }
 }

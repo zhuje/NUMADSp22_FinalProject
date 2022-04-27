@@ -39,8 +39,9 @@ public class Lesson1A_Content extends AppCompatActivity {
     }
 
     public void onClickGoToLesson_1B(View view){
-        Intent i = new Intent(this, SubLesson1.class);
-        startActivity(i);
+        Lesson1A_Content.this.finish();
+        //Intent i = new Intent(this, SubLesson1.class);
+        //startActivity(i);
     }
 
 

@@ -22,5 +22,6 @@ public class Lesson2D_Content extends AppCompatActivity {
         String quizId = "2D";
         i.putExtra("QUIZ_ID",quizId);
         startActivity(i);
+        Lesson2D_Content.this.finish();
     }
 }

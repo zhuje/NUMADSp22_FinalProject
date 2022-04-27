@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1B_Content;
 import edu.neu.madcourse.numadsp22_finalproject.MainLessonsScreen;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.SubLesson1;
@@ -201,8 +202,9 @@ public class Quiz extends AppCompatActivity {
 
     public void onClickGoToCurrentLesson(View view) {
         // DB needs to hold name of next lesson in each quiz
-        Intent intent = new Intent(this, nextActivity);
-        startActivity(intent);
+        //Intent intent = new Intent(this, nextActivity);
+        //startActivity(intent);
+        Quiz.this.finish();
     }
 
 

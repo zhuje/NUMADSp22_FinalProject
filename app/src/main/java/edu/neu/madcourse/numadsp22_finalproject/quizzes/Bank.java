@@ -98,7 +98,7 @@ public class Bank {
         String mcC = "C. こた kota";
         String mcD = "D. きた kita";
         String title = "Quiz 2B";
-        int character = R.drawable.kiku;
+        int character = R.drawable.kuru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -144,7 +144,7 @@ public class Bank {
         String mcC = "C. しない shinai";
         String mcD = "D. しなない shinanai";
         String title = "Quiz 3B";
-        int character = R.drawable.character_hv;
+        int character = R.drawable.suru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -152,7 +152,7 @@ public class Bank {
     public Bank get3C(){
         String question = "彼は傘を ______。\n" +
                 "Kare wa kasa wo ______.\n";
-        String answer = "D";
+        String answer = "A";
         String mcA = "A. 持たない motanai";
         String mcB = "B. 持てない motenai";
         String mcC = "C. 持つない motsunai";
@@ -176,7 +176,7 @@ public class Bank {
         String mcC = "C. しって shitte";
         String mcD = "D. すて sute";
         String title = "Quiz 4B";
-        int character = R.drawable.character_hv;
+        int character = R.drawable.suru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -194,7 +194,7 @@ public class Bank {
         String mcC = "C. だきる dakiru";
         String mcD = "D. すきる sukiru";
         String title = "Quiz 5B";
-        int character = R.drawable.character_hv;
+        int character = R.drawable.suru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -268,7 +268,7 @@ public class Bank {
         String mcC = "C. よぐ yogu";
         String mcD = "D. よむ yomu";
         String title = "Unit Test 1 : Q4";
-        int character = R.drawable.omou;
+        int character = R.drawable.yomu;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -292,7 +292,7 @@ public class Bank {
         String mcC = "C. すった sutta";
         String mcD = "D. しった shitta";
         String title = "Unit Test 2 : Q1";
-        int character = R.drawable.character_hv;
+        int character = R.drawable.suru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -351,7 +351,7 @@ public class Bank {
         String mcC = "C. こないた konaita";
         String mcD = "D. こなかた konakata";
         String title = "Unit Test 3 : Q1";
-        int character = R.drawable.character_hv;
+        int character = R.drawable.kuru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -388,10 +388,10 @@ public class Bank {
         String question = "学生は先生の助言を __________.\n" +
                 "Gakusei wa sensei no jogen wo _________.\n";
         String answer = "B";
-        String mcA = "A. よもなかった kikonakatta";
-        String mcB = "B. よむなかった kikanakatta";
-        String mcC = "C. よめなかった kikenakatta";
-        String mcD = "D. よまなかった kikunakatta";
+        String mcA = "A. 聞こなかった kikonakatta";
+        String mcB = "B. 聞かなかった kikanakatta";
+        String mcC = "C. 聞けなかった kikenakatta";
+        String mcD = "D. 聞くなかった kikunakatta";
         String title = "Unit Test 3 : Q4";
         int character = R.drawable.kiku;
 
@@ -425,7 +425,7 @@ public class Bank {
         String mcC = "C. しって shitte";
         String mcD = "D. すて sute";
         String title = "Unit Test 4 : Q1";
-        int character = R.drawable.character_hv;
+        int character = R.drawable.suru;
 
         return new Bank(question, answer, mcA, mcB, mcC, mcD,title,character);
     }
@@ -450,7 +450,7 @@ public class Bank {
         String answer = "B";
         String mcA = "A. 食べって tabette";
         String mcB = "B. 食べて tabete";
-        String mcC = "C. 食べんて ttabente";
+        String mcC = "C. 食べんて tabente";
         String mcD = "D. 食べで tabede";
         String title = "Unit Test 4 : Q3";
         int character = R.drawable.taberu;

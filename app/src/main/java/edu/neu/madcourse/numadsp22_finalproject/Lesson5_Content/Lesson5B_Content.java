@@ -22,5 +22,6 @@ public class Lesson5B_Content extends AppCompatActivity {
         String quizId = "5B";
         i.putExtra("QUIZ_ID",quizId);
         startActivity(i);
+        Lesson5B_Content.this.finish();
     }
 }

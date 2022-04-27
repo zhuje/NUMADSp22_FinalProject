@@ -38,5 +38,6 @@ public class Lesson1C_Content extends AppCompatActivity {
         String quizId = "1C";
         i.putExtra("QUIZ_ID",quizId);
         startActivity(i);
+        Lesson1C_Content.this.finish();
     }
 }

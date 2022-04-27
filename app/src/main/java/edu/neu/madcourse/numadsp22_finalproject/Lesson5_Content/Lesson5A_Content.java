@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import edu.neu.madcourse.numadsp22_finalproject.Lesson4_Content.Lesson4A_Content;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.SubLesson4;
 import edu.neu.madcourse.numadsp22_finalproject.SubLesson5;
@@ -21,5 +22,6 @@ public class Lesson5A_Content extends AppCompatActivity {
     public void onClickGoToLesson5(View view){
         Intent i = new Intent(this, SubLesson5.class);
         startActivity(i);
+        Lesson5A_Content.this.finish();
     }
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1B_Content;
+import edu.neu.madcourse.numadsp22_finalproject.Lesson1_Content.Lesson1D_Content;
 import edu.neu.madcourse.numadsp22_finalproject.LessonContentAdapter;
 import edu.neu.madcourse.numadsp22_finalproject.R;
 import edu.neu.madcourse.numadsp22_finalproject.SubLesson2;
@@ -33,8 +34,9 @@ public class Lesson2A_Content extends AppCompatActivity {
     }
 
     public void onClickGoToLesson_2B(View view){
-        Intent i = new Intent(this, SubLesson2.class);
-        startActivity(i);
+        Lesson2A_Content.this.finish();
+        //Intent i = new Intent(this, SubLesson2.class);
+        //startActivity(i);
     }
 
 
