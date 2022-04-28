@@ -69,7 +69,7 @@
                     <ListView
                         android:id="@+id/lessonPointsList2"
                         android:layout_width="match_parent"
-                        android:layout_height="253dp"
+                        android:layout_height="450dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
