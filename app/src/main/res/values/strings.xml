@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Doushi Learner</string>
+    <string name="verb_list">Verb List</string>
+    <string name="verb">Verb:</string>
+    <string name="translation">Translation:</string>
+    <string name="character_picture">Character Picture</string>
+    <string name="play_audio">Play Audio</string>
+    <string name="slash">/</string>
+    <string name="try_out">Try</string>
+    <string name="deny_reason">This feature cannot be used as it requires audio recording permission.</string>
+    <string name="okay_option">Okay</string>
+    <string name="try_out_speaking">Try Out Speaking</string>
+    <string name="audio_image">Audio Image</string>
+    <string name="try_out_text">Listen to a native speaker, and test out your pronunciation!</string>
+    <string name="record_your_voice">Record Your Voice</string>
+    <string name="listen_to_audio">Listen to Audio</string>
+    <string name="pause_recording">Stop Recording</string>
+    <string name="play_recording">Play Your Recording</string>
+    <string name="permission_granted">Permission granted - hit \'Record Your Voice\' again to start</string>
 </resources>

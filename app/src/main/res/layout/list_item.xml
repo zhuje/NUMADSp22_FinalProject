@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/character_hv" />
+
+            <TextView
+                android:id="@+id/LessonName"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="false"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:text="Lesson 1"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/lock"
+            android:layout_width="81dp"
+            android:layout_height="94dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="2dp"
+            android:foregroundGravity="center_vertical|center|center_horizontal"
+            android:padding="15dp"
+            android:src="@drawable/greenlock2" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent">-->
+
+<!--<ImageView-->
+<!--    android:id="@+id/lessonImage"-->
+<!--    android:layout_width="65dp"-->
+<!--    android:layout_height="65dp"-->
+<!--    android:layout_alignParentStart="true"-->
+<!--    android:layout_alignParentTop="true"-->
+<!--    android:src="@drawable/lesson2" />-->
+
+<!--<TextView-->
+<!--    android:id="@+id/LessonName"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_toEndOf="@+id/lessonImage"-->
+<!--    android:gravity="center"-->
+<!--    android:text="Lesson Name"-->
+<!--    android:textSize="16sp" />-->
+
+<!--<Button-->
+<!--    android:id="@+id/GoToLsnBTN"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_alignBottom="@+id/lessonImage"-->
+<!--    android:layout_marginStart="151dp"-->
+<!--    android:layout_toEndOf="@+id/LessonName"-->
+<!--    android:text="Go to Lesson" />-->
+<!--android:layout_alignParentStart="true" />-->
+
+<!--</RelativeLayout>-->
+
+
+<!--<ImageView-->
+<!--android:id="@+id/lessonImage"-->
+<!--android:layout_width="65dp"-->
+<!--android:layout_height="65dp"-->
+<!--android:layout_alignParentStart="true"-->
+<!--android:layout_alignParentTop="true"-->
+<!--android:src="@drawable/character" />-->
+
+<!--<TextView-->
+<!--android:id="@+id/LessonName"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginStart="75dp"-->
+<!--android:layout_toEndOf="@+id/lessonImage"-->
+<!--android:gravity="center"-->
+<!--android:text="Lesson Name"-->
+<!--android:textSize="16sp" />-->
+
+<!--<ImageView-->
+<!--android:id="@+id/imageView3"-->
+<!--android:layout_width="68dp"-->
+<!--android:layout_height="45dp"-->
+<!--android:layout_marginStart="42dp"-->
+<!--android:layout_toEndOf="@+id/LessonName"-->
+<!--app:srcCompat="@drawable/greenlock" />-->
+
+<!--    &lt;!&ndash;    <ImageView&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/imageView"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_alignBottom="@+id/lessonImage"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginStart="151dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_toEndOf="@+id/LessonName"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:srcCompat="@drawable/greenlock" />&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        <Button&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/GoToLsnBTN"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_alignBottom="@+id/lessonImage"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginStart="151dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:drawableLeft="@drawable/greenlock"    &ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_toEndOf="@+id/LessonName"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:text="Go to Lesson" />&ndash;&gt;-->
+<!--    android:layout_alignParentStart="true" />-->
