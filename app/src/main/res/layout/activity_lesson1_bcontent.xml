@@ -279,7 +279,7 @@
                     <TextView
                         android:id="@+id/textView25"
                         android:layout_width="match_parent"
-                        android:layout_height="39dp"
+                        android:layout_height="wrap_content"
                         android:padding="10sp"
                         android:text="- Not all verbs that end in る ru are ru-verbs, which we will address in the next sections."
                         android:textColor="@color/black"
