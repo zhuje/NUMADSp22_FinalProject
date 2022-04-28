@@ -47,17 +47,17 @@ public class RecordingActivity extends AppCompatActivity {
                         Boolean audioRecording
                                 = isGranted.getOrDefault(Manifest.permission.RECORD_AUDIO,
                                 false);
-                        // check read external storage permission
-                        Boolean readStorage
-                                = isGranted.getOrDefault(Manifest.permission.READ_EXTERNAL_STORAGE,
-                                false);
-                        // check write external storage permission
-                        Boolean writeStorage
-                                = isGranted.getOrDefault(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                false);
-                        if ((audioRecording != null && audioRecording) && (writeStorage
-                                != null && writeStorage) && (readStorage != null && readStorage)) {
+
+                        if ((audioRecording != null && audioRecording) ) {
                             // permission granted for all things, can go ahead
+                            // make alert dialog
+                            AlertDialog.Builder giveReason =
+                                    new AlertDialog.Builder(RecordingActivity.this);
+                            // give info for permission
+                            giveReason.setTitle(R.string.permission_granted);
+                            // now give button for user to acknowledge
+                            giveReason.setPositiveButton(R.string.okay_option, null);
+                            giveReason.show();
                         } else {
                             // need to explain feature is unavailable due to no permission
                             showDenyReason();
@@ -135,40 +135,18 @@ public class RecordingActivity extends AppCompatActivity {
                     // need to check for permissions for recording already being available
                     if (ContextCompat.checkSelfPermission(RecordingActivity.this,
                             Manifest.permission.RECORD_AUDIO )
-                            == PackageManager.PERMISSION_GRANTED &&
-                            ContextCompat.checkSelfPermission(RecordingActivity.this,
-                                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                                    == PackageManager.PERMISSION_GRANTED
-                            && ContextCompat.checkSelfPermission(RecordingActivity.this,
-                            Manifest.permission.READ_EXTERNAL_STORAGE)
                             == PackageManager.PERMISSION_GRANTED) {
                         // in this case permission is granted and can record
-                        // set it up - using developers documentation on MediaRecorder
-                        audioRecorder = new MediaRecorder();
-                        // this is the file we will save it as
-                        fileToSave = getExternalCacheDir().getAbsolutePath() + "/" + wordFile;
-                        // set source as mic
-                        audioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-                        audioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-                        audioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-                        audioRecorder.setOutputFile(fileToSave);
-                        // once set up we can record
                         recordAudio();
                     } else if (shouldShowRequestPermissionRationale(
-                            Manifest.permission.RECORD_AUDIO)
-                            || shouldShowRequestPermissionRationale(
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE) ||
-                            shouldShowRequestPermissionRationale(
-                            Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                            Manifest.permission.RECORD_AUDIO)) {
                         // need to tell reason why we need to request permission
                         // this is if user has denied permission before
                         showAudioReason();
                     } else {
                         // need to ask for permission to record if this is first time
                         audioPermissionLauncher.launch(new String[]
-                                {Manifest.permission.RECORD_AUDIO,
-                                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                                        Manifest.permission.WRITE_EXTERNAL_STORAGE});
+                                {Manifest.permission.RECORD_AUDIO});
                     }
                 } else {
                     // make alert dialog
@@ -249,6 +227,17 @@ public class RecordingActivity extends AppCompatActivity {
         if (!recordingOn){
             // set it to true that it is running
             recordingOn = true;
+            // set it up - using developers documentation on MediaRecorder
+            // and Android Developer's 'MediaRecorder overview' guide
+            audioRecorder = new MediaRecorder();
+            // this is the file we will save it as
+            fileToSave = getExternalCacheDir().getAbsolutePath() + "/" + wordFile;
+            // set source as mic
+            audioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            audioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            audioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+            audioRecorder.setOutputFile(fileToSave);
+            // once set up we can record
             // try/catch for IOException for running recording
             try {
                 audioRecorder.prepare();

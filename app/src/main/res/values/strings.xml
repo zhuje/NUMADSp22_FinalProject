@@ -16,4 +16,5 @@
     <string name="listen_to_audio">Listen to Audio</string>
     <string name="pause_recording">Stop Recording</string>
     <string name="play_recording">Play Your Recording</string>
+    <string name="permission_granted">Permission granted - hit \'Record Your Voice\' again to start</string>
 </resources>
