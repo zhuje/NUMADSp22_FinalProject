@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 // This activity allows the user to try recording their voice to see how it compares to
 // the given audio recording of the Japanese word
@@ -121,6 +122,9 @@ public class RecordingActivity extends AppCompatActivity {
                     Thread audioThread = new Thread(audioRunnable);
                     // run it
                     audioThread.start();
+                } else {
+                    Toast.makeText(RecordingActivity.this,
+                            "You are recording right now!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -214,7 +218,13 @@ public class RecordingActivity extends AppCompatActivity {
                         Thread audioThread = new Thread(audioRunnable);
                         // run it
                         audioThread.start();
+                    } else {
+                        Toast.makeText(RecordingActivity.this,
+                                "You are recording right now!", Toast.LENGTH_SHORT).show();
                     }
+                } else {
+                    Toast.makeText(RecordingActivity.this,
+                            "You need to record first.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -245,6 +255,9 @@ public class RecordingActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else {
+            Toast.makeText(RecordingActivity.this,
+                    "You are already recording!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -260,6 +273,9 @@ public class RecordingActivity extends AppCompatActivity {
             audioRecorder.reset();
             // change whether it is recording to false
             recordingOn = false;
+        } else {
+            Toast.makeText(RecordingActivity.this,
+                    "You are not recording currently.", Toast.LENGTH_SHORT).show();
         }
     }
 
