@@ -142,6 +142,7 @@ public class UnitTestResults extends AppCompatActivity {
     public void onClickBackToLessons(View view){
         Intent i = new Intent(this, MainLessonsScreen.class);
         startActivity(i);
+        UnitTestResults.this.finish();
     }
 
 

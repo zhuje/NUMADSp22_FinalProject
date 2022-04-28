@@ -196,6 +196,7 @@ public class UnitTest extends AppCompatActivity {
             i.putExtra(Util.KEY_NUM_CORRECT, numCorrect);
             i.putExtra(Util.KEY_UNIT_TEST_ID, unit_test_id);
             startActivity(i);
+            UnitTest.this.finish();
         }
         if (bankListCount < (bankList.length-1)) {
             bankListCount++;
